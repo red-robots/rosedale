@@ -23,6 +23,159 @@
         </div><!--.flexslider-->
     <?php endif;?>
     <div class="row-2">
-        
+        <div class="wrapper cap">
+            <?php $row_2_title = get_field("row_2_title");
+            $events_title = get_field("events_title");
+            $news_title = get_field("news_title");
+            $events_read_more = get_field("events_read_more");
+            $news_read_more = get_field("news_read_more");
+            $events_image = get_field("events_image");
+            $news_image = get_field("news_image");
+            if($row_2_title):?>
+                <header class="row-1">
+                    <h2><?php echo $row_2_title;?></h2>
+                </header>
+            <?php endif;?>
+            <div class="row-2">
+                <section class="col-1">
+                    <?php if($events_title):?>
+                        <header>
+                            <h3><?php echo $events_title;?></h3>
+                        </header>
+                    <?php endif;
+                    if($events_image):?>
+                        <img src="<?php echo $events_image['sizes']['large'];?>" alt="<?php echo $events_image['alt'];?>">
+                    <?php endif; 
+                    $args = array(
+                        'post_type'=>'event',
+                        'posts_per_page'=>3,
+                        'orderby'=>'meta_value_num',
+                        'meta_key'=>'date',
+                        'order'=>'DESC',
+                        'meta_query'=>array(
+                            'key'=>'date',
+                            'value'=>$today,
+                            'compare'=>'>=',
+                            'type'=>'NUMERIC'
+                        )
+                    );
+                    $query = new WP_Query($args);
+                    if($query->have_posts()):?>
+                        <div class="events">
+                            <?php while($query->have_posts()): $query->the_post();?>
+                                <?php $date = get_field("date");?>
+                                <div class="event">
+                                    <a href="<?php the_permalink();?>"> 
+                                        <header>
+                                            <h4><?php the_title();?></h4>
+                                            <div class="date">
+                                                <?php echo $date;?>
+                                            </div><!--.date-->
+                                        </header>
+                                    </a>
+                                </div><!--.event-->
+                            <?php endwhile;?>
+                        </div><!--.events-->
+                        <?php wp_reset_postdata();
+                    endif;
+                    if($events_read_more):?>
+                        <a class="button" href="<?php echo get_permalink();?>">
+                            <?php echo $events_read_more;?>
+                        </a>
+                    <?php endif;?>
+                </section><!--.col-1-->
+                <section class="col-2">
+                    <?php if($news_title):?>
+                        <header>
+                            <h3><?php echo $news_title;?></h3>
+                        </header>
+                    <?php endif;
+                    if($news_image):?>
+                        <img src="<?php echo $news_image['sizes']['large'];?>" alt="<?php echo $news_image['alt'];?>">
+                    <?php endif; 
+                    $args = array(
+                        'post_type'=>'post',
+                        'posts_per_page'=>1,
+                        'orderby'=>'date',
+                        'order'=>'DESC',
+                    );
+                    $query = new WP_Query($args);
+                    if($query->have_posts()):?>
+                        <div class="news">
+                            <?php while($query->have_posts()): $query->the_post();?>
+                                <div class="news"> 
+                                    <header>
+                                        <h4><?php the_title();?></h4>
+                                    </header>
+                                    <div class="copy">
+                                        <?php the_excerpt();?>
+                                    </div><!--.copy-->
+                                    <?php if($news_read_more):?>
+                                        <a class="button" href="<?php echo get_permalink();?>">
+                                            <?php echo $news_read_more;?>
+                                        </a>
+                                    <?php endif;?>
+                                </div><!--.event-->
+                            <?php endwhile;?>
+                        </div><!--.events-->
+                        <?php wp_reset_postdata();
+                    endif;?>
+                </section><!--.col-2-->
+            </div><!--.row-2-->
+        </div><!--.wrapper-->
     </div><!--.row-2-->
+    <?php $sections = get_field("sections");
+    if($sections):?>
+        <div class="row-3">
+            <div class="wrapper cap">
+                <?php $i=0;
+                foreach($sections as $section):?>
+                    <section class="group <?php if($i%2==0) echo "left";?>">
+                        <?php $image = $section['image'];
+                        $title = $section['title'];
+                        $picker = $section['picker'];
+                        if($image):?>
+                            <div class="col-1">
+                                <img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
+                                <header>
+                                    <h2><?php echo $title;?></h2>
+                                </header>
+                            </div><!--.col-1-->
+                        <?php else: ?>
+                            <header>
+                                <h2><?php echo $title;?></h2>
+                            </header>
+                        <?php endif;
+                        if($picker):?>
+                            <div class="col-2">
+                                <?php foreach($picker as $cpt):?>
+                                    <div class="row custom-post-type">
+                                        <header>
+                                            <h3><?php echo get_the_title($cpt->ID);?></h3>
+                                        </header>
+                                        <div class="copy">
+                                            <?php echo get_the_excerpt($cpt->ID);?>
+                                        </div><!--.copy-->
+                                    </div><!--.custom-post-type-->
+                                <?php endforeach;?>
+                            </div><!--.col-2-->
+                        <?php endif; ?>
+                    </section>
+                <?php $i++;
+                endforeach; ?>
+            </div><!--.wrapper-->
+        </div><!--.row-3-->
+    <?php endif; ?>
+    <div class="row-4">
+        <div class="wrapper cap">
+            <section>
+                <header>
+                    <h2><?php echo get_the_title();?></h2>
+                </header>
+                <div class="copy">
+                    <?php echo get_the_excerpt();?>
+                </div><!--.copy-->
+            </section>
+        </div><!--.wrapper-->
+    </div><!--.row-4-->
 </article><!-- #post-## -->
