@@ -12,10 +12,10 @@
 ?>
 
 	</div><!-- #content -->
-
+	<div class="clear-bottom"></div>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="wrapper cap">
-			<div class="row-1">
+			<div class="col-1 col">
 				<?php $contact_title = get_field("contact_title","option");
 				$address_line_1 = get_field("address_line_1","option");
 				$address_line_2 = get_field("address_line_2","option");
@@ -55,13 +55,13 @@
 					</div><!--.social-->
 				<?php endif;?>
 			</div><!--.row-1-->
-			<div class="row-2">
+			<div class="col-2 col">
 				<?php $map = get_field("map","option");
 				if($map):?>
 					<?php echo $map;?>
 				<?php endif;?>
 			</div><!--.row-2-->
-			<div class="row-3">
+			<div class="col-3 col">
 				<?php $hours_title = get_field("hours_title","option");
 				$hours_copy = get_field("hours_copy","option");
 				if($hours_title):?>
@@ -75,7 +75,7 @@
 					</div><!--.hours copy-->
 				<?php endif;?>
 			</div><!--.row-3-->
-			<div class="row-4">
+			<div class="col-4 col">
 				<?php $partners_logo = get_field("partners_logo","option");
 				if($partners_logo):?>
 					<img src="<?php echo $partners_logo['sizes']['medium'];?>" alt="<?php echo $partners_logo['alt'];?>">

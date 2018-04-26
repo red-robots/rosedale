@@ -26,14 +26,14 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="row-1">
-			<div class="wrapper cap">
+			<div class="wrapper cap-nopad">
 				<?php $phone = get_field("phone_number","option");
 				$address_line_1 = get_field("address_line_1","option");
 				$address_line_2 = get_field("address_line_2","option");
 				$support_text = get_field("support_text","option");
 				$support_link = get_field("support_link","option");
 				if($support_link && $support_text):?>
-					<a href="<?php echo $support_link;?>">
+					<a class="button" href="<?php echo $support_link;?>">
 						<?php echo $support_text;?>
 					</a>
 				<?php endif;
@@ -50,7 +50,7 @@
 			</div><!--.wrapper-->
 		</div><!--.row-1-->
 		<div class="row-2">
-			<div class="wrapper cap">
+			<div class="wrapper cap-nopad">
 				<nav class="left-nav" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'left-nav' ) ); ?>
 				</nav><!-- .left-nav -->
@@ -63,7 +63,6 @@
 						<a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo.png";?>" alt="<?php bloginfo('name'); ?>"></a>
 					</div>
 				<?php endif; ?>
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'acstarter' ); ?></button>
 				<nav class="right-nav" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'right-nav') ); ?>
 				</nav><!-- .right-nav -->
