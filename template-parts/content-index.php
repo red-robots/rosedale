@@ -16,7 +16,7 @@
             <ul class="slides">
                 <?php foreach($flexslider as $slide):?>
                     <?php if($slide['image']):?>
-                        <img src="<?php echo $slide['image']['url'];?>" alt="<?php echo $slide['image']['alt'];?>">
+                        <li><img src="<?php echo $slide['image']['url'];?>" alt="<?php echo $slide['image']['alt'];?>"></li>
                     <?php endif;?>
                 <?php endforeach;?>
             </ul><!--.slides-->

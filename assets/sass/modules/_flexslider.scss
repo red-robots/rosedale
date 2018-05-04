@@ -75,18 +75,8 @@ html[xmlns] .flexslider .slides {
  * DEFAULT THEME
  * ====================================================================================================================*/
 .flexslider {
-  margin: 0 0 60px;
-  background: #ffffff;
-  border: 4px solid #ffffff;
   position: relative;
   zoom: 1;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 .flexslider .slides {
   zoom: 1;
@@ -196,7 +186,7 @@ html[xmlns] .flexslider .slides {
 .flex-control-nav {
   width: 100%;
   position: absolute;
-  bottom: -40px;
+  bottom: 10px;
   text-align: center;
 }
 .flex-control-nav li {
@@ -209,26 +199,17 @@ html[xmlns] .flexslider .slides {
   width: 11px;
   height: 11px;
   display: block;
-  background: #666;
-  background: rgba(0, 0, 0, 0.5);
+  background: white;
+  border: 2px solid white;
   cursor: pointer;
   text-indent: -9999px;
-  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
 }
+.flex-control-paging li a.flex-active,
 .flex-control-paging li a:hover {
-  background: #333;
-  background: rgba(0, 0, 0, 0.7);
-}
-.flex-control-paging li a.flex-active {
-  background: #000;
-  background: rgba(0, 0, 0, 0.9);
-  cursor: default;
+  background: transparent;
 }
 .flex-control-thumbs {
   margin: 5px 0 0;

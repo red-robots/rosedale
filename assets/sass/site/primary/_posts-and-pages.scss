@@ -1,0 +1,117 @@
+.template-index {
+    >.flexslider.row-1 {
+        ul.slides {
+            li {
+                img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+    >.row-2 {
+        >.wrapper {
+            header.row-1 {
+                margin: 0 0 20px 0;
+                h2 {
+                    margin: 0;
+                    text-transform: uppercase;
+                    color: $color__rose-dark-green;
+                    font-size: 30px;
+                    text-align: center;
+                }
+            }
+            >.row-2 {
+                >.col-1 {
+                    header {
+                        h3 {
+
+                        }
+                    }
+                    img {
+
+                    }
+                    .events {
+                        .event {
+                            a {
+                                header {
+                                    h4 {
+                                    }
+                                    .date {
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    a.button {
+
+                    }
+                }
+                >.col-2 {
+                    header {
+                        h3 {
+
+                        }
+                    }
+                    img {
+
+                    }
+                    .news {
+                        header {
+                            h4 {
+
+                            }
+                        }
+                        .copy {
+
+                        }
+                        a.button {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    >.row-3 {
+        >.wrapper {
+            .group {
+                >.col-1 {
+
+                }
+                >header {
+                    h2 {
+
+                    }
+                }
+                >.col-2 {
+                    >.row.custom-post-type {
+                        header {
+                            h3 {
+
+                            }
+                        }
+                        .copy {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    >.row-4 {
+        >.wrapper {
+            section {
+                header {
+                    h2 {
+
+                    }
+                }
+                .copy {
+
+                }
+            }
+        }
+    }
+}
