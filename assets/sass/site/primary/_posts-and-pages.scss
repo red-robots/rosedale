@@ -11,63 +11,181 @@
     }
     >.row-2 {
         >.wrapper {
+            padding: 20px 0 40px 0;
             header.row-1 {
                 margin: 0 0 20px 0;
                 h2 {
                     margin: 0;
+                    padding: 0 0 20px 0;
                     text-transform: uppercase;
                     color: $color__rose-dark-green;
-                    font-size: 30px;
+                    font-size: 22px;
                     text-align: center;
+                    @media screen and (min-width: $tabwidth){
+                        font-size: 30px;
+                    }
                 }
             }
             >.row-2 {
+                @media screen and (min-width: $tabwidth){
+                    margin: 60px 0 0 0;
+                }
                 >.col-1 {
-                    header {
+                    position: relative;
+                    text-align: center;
+                    margin: 60px 0 0 0;
+                    @media screen and (min-width: $tabwidth){
+                        width: 40%;
+                        margin: 0;
+                        float: left;
+                        @include flexbox();
+                        @include flexbox-justify(flex-start);
+                        @include flexbox-align-content(center);
+                        @include flexbox-align-items(center);
+                        @include flexbox-direction(column);
+                    }
+                    >header {
+                        @include translatexy(-50%,-50%);
+                        position: absolute;
+                        background-color: $color__rose-dark-green;
+                        top: 0;
+                        left: 50%;
+                        min-width: 80%;
+                        max-width: 100%;
                         h3 {
-
+                            padding: 10px 20px;
+                            margin: 0;
+                            font-size: 18px;
+                            color: white;
+                            text-transform: uppercase;
+                            text-align: center;
+                            @media screen and (min-width: $tabwidth){
+                                font-size: 25px;
+                            }
                         }
                     }
                     img {
-
+                        width: 100%;
+                        display: block;
                     }
                     .events {
+                        width: 100%;
+                        padding: 20px 0;
+                        text-align: left;
+                        @media screen and (min-width: $tabwidth){
+                            padding: 80px 20px 40px 20px;
+                        }
                         .event {
+                            margin: 20px 0 0 0;
+                            &:first-child {
+                                margin: 0;
+                            }
                             a {
+                                text-decoration: none;
+                                color: inherit;
                                 header {
                                     h4 {
+                                        color: $color__rose-dark-green;
+                                        text-transform: capitalize;
+                                        margin: 0;
+                                        font-size: 14px;
+                                        display: inline;
+                                        @media screen and (min-width: $tabwidth){
+                                            font-size: 18px;
+                                        }
                                     }
                                     .date {
-
+                                        color: $color__rose-dark-green;
+                                        font-size: 14px;
+                                        display: inline;
+                                        @media screen and (min-width: $tabwidth){
+                                            font-size: 18px;
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                     a.button {
-
+                        margin: auto 0 0 0;
+                        font-size: 18px;
+                        @media screen and (min-width: $tabwidth){
+                            font-size: 25px;
+                        }
                     }
                 }
                 >.col-2 {
-                    header {
+                    position: relative;
+                    text-align: center;
+                    margin: 60px 0 0 0;
+                    @media screen and (min-width: $tabwidth){
+                        width: 40%;
+                        margin: 0;
+                        float: right;
+                        @include flexbox();
+                        @include flexbox-justify(flex-start);
+                        @include flexbox-align-content(center);
+                        @include flexbox-align-items(center);
+                        @include flexbox-direction(column);
+                    }
+                    >header {
+                        @include translatexy(-50%,-50%);
+                        position: absolute;
+                        background-color: $color__rose-dark-green;
+                        top: 0;
+                        left: 50%;
+                        min-width: 80%;
+                        max-width: 100%;
                         h3 {
-
+                            padding: 10px 20px;
+                            margin: 0;
+                            font-size: 18px;
+                            color: white;
+                            text-transform: uppercase;
+                            text-align: center;
+                            @media screen and (min-width: $tabwidth){
+                                font-size: 25px;
+                            }
                         }
                     }
                     img {
-
+                        width: 100%;
+                        display: block;
                     }
                     .news {
-                        header {
-                            h4 {
-
+                        width: 100%;
+                        text-align: left;
+                        padding: 20px 0;
+                        @media screen and (min-width: $tabwidth){
+                            padding: 80px 20px 40px 20px;
+                        }
+                        .post {
+                            header {
+                                margin: 0 0 20px 0;
+                                h4 {
+                                    text-transform: uppercase;
+                                    margin: 0;
+                                    font-size: 18px;
+                                    color: $color__rose-medium-green;
+                                    @media screen and (min-width: $tabwidth){
+                                        font-size: 25px;
+                                    }
+                                }
+                            }
+                            .copy {
+                                font-size: 14px;
+                                color: $color__rose-dark-green;
+                                @media screen and (min-width: $tabwidth){
+                                    font-size: 18px;
+                                }
                             }
                         }
-                        .copy {
-
-                        }
-                        a.button {
-
+                    }
+                    a.button {
+                        margin: auto 0 0 0;
+                        font-size: 18px;
+                        @media screen and (min-width: $tabwidth){
+                            font-size: 25px;
                         }
                     }
                 }

@@ -36,8 +36,8 @@
                     <h2><?php echo $row_2_title;?></h2>
                 </header>
             <?php endif;?>
-            <div class="row-2">
-                <section class="col-1">
+            <div class="row-2 clear-bottom">
+                <section class="col-1 js-blocks">
                     <?php if($events_title):?>
                         <header>
                             <h3><?php echo $events_title;?></h3>
@@ -84,7 +84,7 @@
                         </a>
                     <?php endif;?>
                 </section><!--.col-1-->
-                <section class="col-2">
+                <section class="col-2 js-blocks">
                     <?php if($news_title):?>
                         <header>
                             <h3><?php echo $news_title;?></h3>
@@ -103,21 +103,21 @@
                     if($query->have_posts()):?>
                         <div class="news">
                             <?php while($query->have_posts()): $query->the_post();?>
-                                <div class="news"> 
+                                <div class="post"> 
                                     <header>
                                         <h4><?php the_title();?></h4>
                                     </header>
                                     <div class="copy">
                                         <?php the_excerpt();?>
                                     </div><!--.copy-->
-                                    <?php if($news_read_more):?>
-                                        <a class="button" href="<?php echo get_permalink();?>">
-                                            <?php echo $news_read_more;?>
-                                        </a>
-                                    <?php endif;?>
-                                </div><!--.event-->
+                                </div><!--.post-->
                             <?php endwhile;?>
-                        </div><!--.events-->
+                        </div><!--.news-->
+                        <?php if($news_read_more):?>
+                            <a class="button" href="<?php echo get_permalink();?>">
+                                <?php echo $news_read_more;?>
+                            </a>
+                        <?php endif;?>
                         <?php wp_reset_postdata();
                     endif;?>
                 </section><!--.col-2-->
