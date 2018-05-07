@@ -144,7 +144,7 @@
                         if($title):?>
                             <div class="col-1">
                                 <?php if($image):?>
-                                    <img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
+                                    <div class="image" style="background-image: url(<?php echo $image['sizes']['large'];?>);"></div>
                                 <?php endif;?>
                                 <header>
                                     <h2><?php echo $title;?></h2>
