@@ -1,4 +1,5 @@
 .template-index {
+    padding: 0 0 100px 0;
     >.flexslider.row-1 {
         ul.slides {
             li {
@@ -74,6 +75,15 @@
                         text-align: left;
                         @media screen and (min-width: $tabwidth){
                             padding: 80px 20px 40px 20px;
+                        }
+                        .date {
+                            text-transform: uppercase;
+                            margin: 0;
+                            font-size: 18px;
+                            color: $color__rose-medium-green;
+                            @media screen and (min-width: $tabwidth){
+                                font-size: 25px;
+                            }
                         }
                         .event {
                             margin: 20px 0 0 0;
@@ -194,24 +204,100 @@
     }
     >.row-3 {
         >.wrapper {
+            padding: 60px 0 80px 0;
             .group {
-                >.col-1 {
-
+                margin: 60px 0 0 0;
+                border: 2px solid $color__rose-medium-green;
+                @media screen and (min-width: $tabwidth){
+                    @include flexbox();
+                    margin: 80px 0 0 0;
+                    @include flexbox-justify(space-between);
+                    @include flexbox-align-content(stretch);
+                    @include flexbox-align-items(stretch);
                 }
-                >header {
-                    h2 {
-
+                &:first-child {
+                    margin: 0;
+                }
+                &.left {
+                    >.col-1 {
+                        order: 1;
+                        header {
+                            background-color: $color__rose-medium-green;
+                            h2 {
+                                color: $color__rose-dark-green;
+                            }
+                        }
+                    }
+                    >.col-2 {
+                        order: 2;
+                    }
+                }
+                &:nth-child(3){
+                    >.col-1 {
+                        header {
+                            @include translatexy(-50%,50%);
+                            bottom: 0;
+                            top: unset;
+                        }
+                    }
+                }
+                >.col-1 {
+                    order: 2;
+                    position: relative;
+                    max-width: 40%;
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
+                    header {
+                        @include translatexy(-50%,-50%);
+                        position: absolute;
+                        background-color: $color__rose-dark-green;
+                        top: 0;
+                        left: 50%;
+                        min-width: 80%;
+                        max-width: 100%;
+                        h2 {
+                            padding: 10px 20px;
+                            margin: 0;
+                            font-size: 18px;
+                            color: white;
+                            text-transform: uppercase;
+                            text-align: center;
+                            @media screen and (min-width: $tabwidth){
+                                font-size: 25px;
+                            }
+                        }
                     }
                 }
                 >.col-2 {
+                    order: 1;
+                    @include flexbox-flex(1,1,auto);
+                    @media screen and (min-width: $tabwidth){
+                        padding: 60px;
+                    }
                     >.row.custom-post-type {
-                        header {
-                            h3 {
-
-                            }
+                        @media screen and (min-width: $tabwidth){
+                            margin: 20px 0 0 0;
                         }
-                        .copy {
-
+                        &:first-child {
+                            margin: 0;
+                        }
+                        a {
+                            text-decoration: none;
+                            color: inherit;
+                            header {
+                                h3 {
+                                    color: $color__rose-dark-green;
+                                    text-transform: uppercase;
+                                    font-size: 18px;
+                                    margin: 0;
+                                }
+                            }
+                            .copy {
+                                font-size: 18px;
+                                color: $color__rose-dark-green;
+                            }
                         }
                     }
                 }
@@ -221,13 +307,32 @@
     >.row-4 {
         >.wrapper {
             section {
+                position: relative;
+                padding: 40px 10px 20px 10px;
+                border: 2px solid $color__rose-medium-green;
                 header {
+                    background-color: $color__rose-light-green;
+                    @include translatexy(-50%,-50%);
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    display: inline-block;
+                    min-width: 30%;
                     h2 {
-
+                        padding: 10px 20px;
+                        margin: 0;
+                        font-size: 18px;
+                        color: $color__rose-dark-green;
+                        text-transform: uppercase;
+                        text-align: center;
+                        @media screen and (min-width: $tabwidth){
+                            font-size: 25px;
+                        }
                     }
                 }
                 .copy {
-
+                    color: $color__rose-dark-green;
+                    font-size: 16px;
                 }
             }
         }

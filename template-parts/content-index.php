@@ -38,15 +38,16 @@
             <?php endif;?>
             <div class="row-2 clear-bottom">
                 <section class="col-1 js-blocks">
-                    <?php if($events_title):?>
+                    <?php $today = Date('Ymd');
+                    if($events_title):?>
                         <header>
                             <h3><?php echo $events_title;?></h3>
                         </header>
                     <?php endif;
                     if($events_image):?>
                         <img src="<?php echo $events_image['sizes']['large'];?>" alt="<?php echo $events_image['alt'];?>">
-                    <?php endif; 
-                    $args = array(
+                    <?php endif; ?>
+                    <?php $args = array(
                         'post_type'=>'event',
                         'posts_per_page'=>3,
                         'orderby'=>'meta_value_num',
@@ -62,6 +63,9 @@
                     $query = new WP_Query($args);
                     if($query->have_posts()):?>
                         <div class="events">
+                            <div class="date">
+                                <?php echo (new DateTime())->format('F');?>
+                            </div><!--.date-->
                             <?php while($query->have_posts()): $query->the_post();?>
                                 <?php $date = get_field("date");?>
                                 <div class="event">
@@ -118,7 +122,10 @@
                                 <?php echo $news_read_more;?>
                             </a>
                         <?php endif;?>
-                        <?php wp_reset_postdata();
+                        <?php $post = get_post(84);
+                        if($post):
+                            setup_postdata($post);
+                        endif;
                     endif;?>
                 </section><!--.col-2-->
             </div><!--.row-2-->
@@ -134,30 +141,37 @@
                         <?php $image = $section['image'];
                         $title = $section['title'];
                         $picker = $section['picker'];
-                        if($image):?>
+                        if($title):?>
                             <div class="col-1">
-                                <img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
+                                <?php if($image):?>
+                                    <img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
+                                <?php endif;?>
                                 <header>
                                     <h2><?php echo $title;?></h2>
                                 </header>
                             </div><!--.col-1-->
-                        <?php else: ?>
-                            <header>
-                                <h2><?php echo $title;?></h2>
-                            </header>
                         <?php endif;
                         if($picker):?>
                             <div class="col-2">
-                                <?php foreach($picker as $cpt):?>
-                                    <div class="row custom-post-type">
-                                        <header>
-                                            <h3><?php echo get_the_title($cpt->ID);?></h3>
-                                        </header>
-                                        <div class="copy">
-                                            <?php echo get_the_excerpt($cpt->ID);?>
-                                        </div><!--.copy-->
-                                    </div><!--.custom-post-type-->
-                                <?php endforeach;?>
+                                <?php foreach($picker as $cpt):
+                                    $title = $cpt['title'];
+                                    $description = $cpt['description'];
+                                    $link = $cpt['link'];
+                                    if($link&&$title):?>
+                                        <div class="row custom-post-type">
+                                            <a href="<?php echo $link;?>">
+                                                <header>
+                                                    <h3><?php echo $title;?></h3>
+                                                </header>
+                                                <?php if($description):?>
+                                                    <div class="copy">
+                                                        <?php echo $description;?>
+                                                    </div><!--.copy-->
+                                                <?php endif;?>
+                                            </a>
+                                        </div><!--.custom-post-type-->
+                                    <?php endif;
+                                endforeach;?>
                             </div><!--.col-2-->
                         <?php endif; ?>
                     </section>
@@ -165,17 +179,21 @@
                 endforeach; ?>
             </div><!--.wrapper-->
         </div><!--.row-3-->
-    <?php endif; ?>
-    <div class="row-4">
-        <div class="wrapper cap">
-            <section>
-                <header>
-                    <h2><?php echo get_the_title();?></h2>
-                </header>
-                <div class="copy">
-                    <?php echo get_the_excerpt();?>
-                </div><!--.copy-->
-            </section>
-        </div><!--.wrapper-->
-    </div><!--.row-4-->
+    <?php endif; 
+    $title = get_field("about_title");
+    $description = get_field("about_description");
+    if($title&&$description):?>
+        <div class="row-4">
+            <div class="wrapper cap">
+                <section>
+                    <header>
+                        <h2><?php echo $title;?></h2>
+                    </header>
+                    <div class="copy">
+                        <?php echo $description;?>
+                    </div><!--.copy-->
+                </section>
+            </div><!--.wrapper-->
+        </div><!--.row-4-->
+    <?php endif;?>
 </article><!-- #post-## -->
