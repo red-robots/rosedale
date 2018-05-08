@@ -1,6 +1,7 @@
 <?php $args = array(
     'post_type'=>'event',
     'posts_per_page'=>2,
+    'post__not_in'=>array(get_the_ID()),
     'orderby'=>'meta_value_num',
     'meta_key'=>'date',
     'order'=>'DESC',
@@ -17,14 +18,14 @@ if($query->have_posts()):?>
         <header>
             <h2>Upcoming</h2>
         </header>
-        <div class="events">
+        <div class="events clear-bottom">
             <?php while($query->have_posts()):$query->the_post();?>
                 <?php $image = get_field("event_image");
                 $date = get_field("date");
-                $view_text = get_field("view_events_text");
+                $view_text = get_field("view_events_text","option");
                 $description = get_field("brief_description");?>
                 <section class="event">
-                    <header>
+                    <header class="js-blocks">
                         <h3><?php the_title();?></h3>
                     </header>
                     <?php if($image):?>
@@ -41,9 +42,9 @@ if($query->have_posts()):?>
                         </div><!--.description-->
                     <?php endif;
                     if($view_text):?>
-                        <div class="link" href="<?php the_permalink();?>">
+                        <a class="button" href="<?php the_permalink();?>">
                             <?php echo $view_text;?>
-                        </div><!--.link-->
+                        </a><!--.link-->
                     <?php endif;?>
                 </section><!--.event-->
             <?php endwhile;?>
