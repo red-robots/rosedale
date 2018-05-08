@@ -10,8 +10,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-boxes"); ?>>
+    <?php $banner = get_field("banner");
+    if($banner):?>
+        <div class="banner">
+            <img src="<?php echo $banner['url'];?>" alt="<?php echo $banner['alt'];?>">
+        </div><!--.banner-->
+    <?php endif;?>
     <div class="row-1">    
-        <div class="wrapper">
+        <div class="wrapper cap">
             <?php $args = array(
                 'post_parent'=>wp_get_post_parent_id(get_the_ID()),
                 'posts_per_page'=>-1,
@@ -29,10 +35,11 @@
                         </li>
                     <?php endwhile;?>
                 </ul>
-            <?php endif;?>
+                <?php wp_reset_postdata();
+            endif;?>
         </div><!--.wrapper-->
     </div><!--.row-1-->
-    <div class="wrapper">
+    <div class="wrapper cap internal">
         <section class="row-2">
             <header>
                 <h1><?php the_title();?></h1>
@@ -43,19 +50,22 @@
         </section><!--.row-2-->
         <?php $boxes = get_field("boxes");
         if($boxes):?>
-            <div class="row-3 boxes">
-                <?php foreach($boxes as $box):
+            <div class="row-3 boxes clear-bottom">
+                <?php $i = 0;
+                foreach($boxes as $box):
                     $image = $box['image'];
                     $title = $box['title'];
                     $link = $box['link'];?>
                     <?php if($image&&$box&&$link):?>
-                        <a href="<?php echo $link;?>">
+                        <a href="<?php echo $link;?>" class="js-blocks <?php if($i%3==0) echo "first";?> <?php if(($i+1)%3==0) echo "last";?>">
                             <img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
                             <h2><?php echo $title;?></h2>
                         </a>
-                    <?php endif;?>
+                        <?php $i++;
+                    endif;?>
                 <?php endforeach;?>
             </div><!--.row-3-->
         <?php endif;?>
+        <?php get_template_part( 'template-parts/upcoming' );?>
     </div><!--.wrapper-->
 </article><!-- #post-## -->
