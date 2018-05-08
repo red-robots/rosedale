@@ -924,29 +924,29 @@ aside.upcoming .events .event a.button{margin:20px 0 0 0;width:100%;font-size:18
 .template-event>.wrapper>.row-3>.col-2 .events .event a .date{padding:0 5px;background-color:#819aa0;color:white;font-size:14px;display:inline-block}
 .template-event>.wrapper>.row-3>.col-2 .events .event a .copy{margin:5px 0 0 0}
 .template-history>.banner img{display:block;width:100%}
-.template-history>.wrapper{text-align:left;padding:20px 0}
-@media screen and (min-width:600px){.template-history>.wrapper{padding:3% 0 6% 0}
-}.template-history>.wrapper>header.row-1{padding:0 0 10px 0}
-.template-history>.wrapper>header.row-1 h1{margin:0;text-transform:uppercase;color:#819aa0;font-size:22px}
-@media screen and (min-width:600px){.template-history>.wrapper>header.row-1 h1{font-size:30px}
-}.template-history>.wrapper>.row-2{margin:20px 0 0 0}
-@media screen and (min-width:900px){.template-history>.wrapper>.row-2{margin:40px 0 0 0}
-}.template-history>.wrapper>.row-2>.col-1{text-align:left;margin:40px 0 0 0}
-@media screen and (min-width:900px){.template-history>.wrapper>.row-2>.col-1{float:right;margin:0;min-height:1px;width:65%;padding:0 60px 0 0}
-}.template-history>.wrapper>.row-2>.col-1 .sections .section{margin:30px 0 0 0}
-.template-history>.wrapper>.row-2>.col-1 .sections .section:first-child{margin:0}
-.template-history>.wrapper>.row-2>.col-1 .sections .section>a{width:100%;display:block}
-.template-history>.wrapper>.row-2>.col-1 .sections .section header h2{margin:0;text-align:left;font-size:18px;color:#cfdfde;text-transform:uppercase}
-@media screen and (min-width:900px){.template-history>.wrapper>.row-2>.col-1 .sections .section header h2{font-size:20px}
-}.template-history>.wrapper>.row-2>.col-1 .sections .section .copy{margin:20px 0 0 0}
-.template-history>.wrapper>.row-2>.col-2{position:relative}
-@media screen and (min-width:900px){.template-history>.wrapper>.row-2>.col-2{float:right;min-height:1px;width:35%;margin:0;padding:0 0 0 40px}
-}.template-history>.wrapper>.row-2>.col-2 ul{margin:0;padding:0}
-.template-history>.wrapper>.row-2>.col-2 ul li{display:block;list-style-type:none;margin:0;padding:0}
-.template-history>.wrapper>.row-2>.col-2 ul li a{display:block;color:#819aa0;padding:10px;margin:0;text-decoration:none;font-size:18px;text-transform:uppercase}
-@media screen and (min-width:900px){.template-history>.wrapper>.row-2>.col-2 ul li a{font-size:20px}
-}.template-history>.wrapper>.row-2>.col-2 ul li a:hover{color:white;background-color:#cfdfde}
-.template-history>.wrapper>.row-2>.col-2 ul li a.active{color:white;background-color:#cfdfde}
+.template-history>.wrapper>.wrapper{text-align:left;padding:20px 0}
+@media screen and (min-width:600px){.template-history>.wrapper>.wrapper{padding:3% 0 6% 0}
+}.template-history>.wrapper>.wrapper>header.row-1{padding:0 0 10px 0}
+.template-history>.wrapper>.wrapper>header.row-1 h1{margin:0;text-transform:uppercase;color:#819aa0;font-size:22px}
+@media screen and (min-width:600px){.template-history>.wrapper>.wrapper>header.row-1 h1{font-size:30px}
+}.template-history>.wrapper>.wrapper>.row-2{margin:20px 0 0 0}
+@media screen and (min-width:900px){.template-history>.wrapper>.wrapper>.row-2{margin:40px 0 0 0}
+}.template-history>.wrapper>.wrapper>.row-2>.col-1{text-align:left;margin:40px 0 0 0}
+@media screen and (min-width:600px){.template-history>.wrapper>.wrapper>.row-2>.col-1{float:left;margin:0;min-height:1px;width:65%;padding:0 60px 0 0}
+}.template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section{margin:30px 0 0 0}
+.template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section:first-child{margin:0}
+.template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section>a{width:100%;display:block}
+.template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section header h2{margin:0;text-align:left;font-size:18px;color:#cfdfde;text-transform:uppercase}
+@media screen and (min-width:900px){.template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section header h2{font-size:20px}
+}.template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section .copy{margin:20px 0 0 0}
+.template-history>.wrapper>.wrapper>.row-2>.col-2{position:relative}
+@media screen and (min-width:600px){.template-history>.wrapper>.wrapper>.row-2>.col-2{float:right;min-height:1px;width:35%;margin:0;padding:0 0 0 40px}
+}.template-history>.wrapper>.wrapper>.row-2>.col-2 ul{margin:0;padding:0}
+.template-history>.wrapper>.wrapper>.row-2>.col-2 ul li{display:block;list-style-type:none;margin:0;padding:0}
+.template-history>.wrapper>.wrapper>.row-2>.col-2 ul li a{display:block;color:#819aa0;padding:10px;margin:0;text-decoration:none;font-size:16px;text-transform:uppercase}
+@media screen and (min-width:900px){.template-history>.wrapper>.wrapper>.row-2>.col-2 ul li a{font-size:20px}
+}.template-history>.wrapper>.wrapper>.row-2>.col-2 ul li a:hover{color:white;background-color:#cfdfde}
+.template-history>.wrapper>.wrapper>.row-2>.col-2 ul li a.active{color:white;background-color:#cfdfde}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
