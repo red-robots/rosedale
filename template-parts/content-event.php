@@ -16,7 +16,7 @@
             <img src="<?php echo $banner['url'];?>" alt="<?php echo $banner['alt'];?>">
         </div><!--.banner-->
     <?php endif;?>
-    <div class="wrapper cap">
+    <div class="wrapper cap internal">
         <header class="row-1">
             <h1><?php the_title();?></h1>
         </header>

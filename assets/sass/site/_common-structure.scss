@@ -7,6 +7,12 @@
 		padding-right: 4% !important;
 		padding-left: 4% !important;
 	}
+	&.internal {
+		@media screen and (min-width: $midwidth){
+			padding-right: 10% !important;
+			padding-left: 10% !important;
+		}
+	}
 }
 .cap-nopad {
 	max-width: 1300px;
@@ -161,7 +167,7 @@ a.button {
 					width: 1/3*100%;
 					order: 1;
 					margin: 0;
-					text-align: right;
+					text-align: left;
 				}
 				>div {
 					ul {
@@ -222,7 +228,7 @@ a.button {
 				@media screen and (min-width: $midwidth){
 					width: 1/3*100%;
 					margin: 0;
-					text-align: left;
+					text-align: right;
 				}
 				>div {
 					ul {
