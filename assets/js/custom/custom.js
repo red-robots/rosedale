@@ -80,4 +80,12 @@ jQuery(document).ready(function ($) {
 	------------------------------------*/
 	new WOW().init();
 
+	$("a[href^=#]").click(function(e){
+		e.preventDefault();
+		$("a[href^=#]").removeClass("active");
+		$(e.target).addClass("active");
+		var href = e.target.hash.substring(1);
+		$('html, body').animate({scrollTop: $("a[name="+href+"]").offset().top}, 500);
+	});
+
 });// END #####################################    END

@@ -15,7 +15,7 @@ get_header(); ?>
 			<?php
 			if ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'boxes' );
+				get_template_part( 'template-parts/content', 'history' );
 
 			endif; // End of the loop.
 			?>
