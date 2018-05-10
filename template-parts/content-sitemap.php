@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php.
+ * Template part for displaying page content in page-sitemap.php.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -16,29 +16,31 @@
             <img src="<?php echo $banner['url'];?>" alt="<?php echo $banner['alt'];?>">
         </div><!--.banner-->
     <?php endif;?>
-    <div class="row-1">    
-        <div class="wrapper cap">
-            <?php $args = array(
-                'post_parent'=>wp_get_post_parent_id(get_the_ID()),
-                'posts_per_page'=>-1,
-                'post_type'=>'page',
-                'post__not_in'=>array(get_the_ID())
-            );
-            $query = new WP_Query($args);
-            if($query->have_posts()):?>
-                <ul>
-                    <?php while($query->have_posts()):$query->the_post();?>
-                        <li>
-                            <a href="<?php the_permalink();?>">
-                                <?php the_title();?>
-                            </a>
-                        </li>
-                    <?php endwhile;?>
-                </ul>
-                <?php wp_reset_postdata();
-            endif;?>
-        </div><!--.wrapper-->
-    </div><!--.row-1-->
+    <?php if(wp_get_post_parent_id(get_the_ID())!=0):?>
+        <div class="row-1">    
+            <div class="wrapper cap">
+                <?php $args = array(
+                    'post_parent'=>wp_get_post_parent_id(get_the_ID()),
+                    'posts_per_page'=>-1,
+                    'post_type'=>'page',
+                    'post__not_in'=>array(get_the_ID())
+                );
+                $query = new WP_Query($args);
+                if($query->have_posts()):?>
+                    <ul>
+                        <?php while($query->have_posts()):$query->the_post();?>
+                            <li>
+                                <a href="<?php the_permalink();?>">
+                                    <?php the_title();?>
+                                </a>
+                            </li>
+                        <?php endwhile;?>
+                    </ul>
+                    <?php wp_reset_postdata();
+                endif;?>
+            </div><!--.wrapper-->
+        </div><!--.row-1-->
+    <?php endif;?>
     <div class="wrapper cap internal">
         <section class="row-2">
             <header>
@@ -46,6 +48,7 @@
             </header>
             <div class="copy">
                 <?php the_content();?>
+                <?php wp_nav_menu( array( 'theme_location' => 'sitemap') ); ?>
             </div><!--.copy-->
         </section><!--.row-2-->
         <?php $boxes = get_field("boxes");

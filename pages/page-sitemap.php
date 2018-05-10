@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Boxes
+ * Template Name: Sitemap
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -15,7 +15,7 @@ get_header(); ?>
 			<?php
 			if ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'boxes' );
+				get_template_part( 'template-parts/content', 'sitemap' );
 
 			endif; // End of the loop.
 			?>
