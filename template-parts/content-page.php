@@ -10,19 +10,19 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-boxes"); ?>>
-    <?php $banner = get_field("banner");
+    <?php $banner = get_field("image");
     if($banner):?>
         <div class="banner">
             <img src="<?php echo $banner['url'];?>" alt="<?php echo $banner['alt'];?>">
         </div><!--.banner-->
     <?php endif;?>
+    <?php $parent = wp_get_post_parent_id(get_the_ID())==0?get_the_ID():wp_get_post_parent_id(get_the_ID());?>
     <div class="row-1">    
         <div class="wrapper cap">
             <?php $args = array(
-                'post_parent'=>wp_get_post_parent_id(get_the_ID()),
+                'post_parent'=>$parent,
                 'posts_per_page'=>-1,
-                'post_type'=>'page',
-                'post__not_in'=>array(get_the_ID())
+                'post_type'=>'page'
             );
             $query = new WP_Query($args);
             if($query->have_posts()):?>

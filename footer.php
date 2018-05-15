@@ -22,6 +22,7 @@
 				$phone = get_field("phone_number","option");
 				$tumblr_link = get_field("tumblr_link","option");
 				$facebook_link = get_field("facebook_link","option");
+				$flickr_link = get_field("flickr_link","option");
 				if($contact_title):?>
 					<header>
 						<h2><?php echo $contact_title;?></h2>
@@ -40,7 +41,7 @@
 						<?php echo $phone;?>
 					</div><!--.phone-->
 				<?php endif;
-				if($tumblr_link||$facebook_link):?>
+				if($tumblr_link||$facebook_link||$flickr_link):?>
 					<div class="social">
 						<?php if($tumblr_link):?>
 							<a href="<?php echo $tumblr_link;?>">
@@ -50,6 +51,11 @@
 						<?php if($facebook_link):?>
 							<a href="<?php echo $facebook_link;?>">
 								<i class="fa fa-facebook"></i>
+							</a>
+						<?php endif;?>
+						<?php if($flickr_link):?>
+							<a href="<?php echo $flickr_link;?>">
+								<i class="fa fa-flickr"></i>
 							</a>
 						<?php endif;?>
 					</div><!--.social-->
@@ -75,10 +81,22 @@
 					</div><!--.hours copy-->
 				<?php endif;?>
 			</div><!--.row-3-->
-			<div class="col-4 col">
+			<div class="col-4 col clear-bottom">
 				<?php $partners_logo = get_field("partners_logo","option");
 				if($partners_logo):?>
-					<img src="<?php echo $partners_logo['sizes']['medium'];?>" alt="<?php echo $partners_logo['alt'];?>">
+					<?php foreach($partners_logo as $row):
+						$logo = $row['partner_logo'];
+						$link = $row['partner_website'];
+						if($logo):?>
+							<?php if($link):?>
+								<a href="<?php echo $link;?>">
+							<?php endif;?>
+									<img src="<?php echo $logo['sizes']['medium'];?>" alt="<?php echo $logo['alt'];?>">
+							<?php if($link):?>
+								</a>
+							<?php endif;?>
+						<?php endif;
+					endforeach;?>
 				<?php endif;?>
 			</div><!--.row-4-->
 		</div><!--.wrapper-->

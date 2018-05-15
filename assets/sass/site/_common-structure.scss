@@ -134,7 +134,7 @@ a.button {
 			}
 			.phone {
 				margin: 10px 0 0 0;
-				font-size: 22px;
+				font-size: 18px;
 				line-height: 1.2;
 				color: $color__rose-dark-green;
 				@media screen and (min-width: $midwidth){
@@ -153,7 +153,7 @@ a.button {
 			@include flexbox-justify(flex-start);
 			@include flexbox-direction(column);
 			@media screen and (min-width: $midwidth){
-				padding: 40px 80px;
+				padding: 20px 80px;
 				@include flexbox-align-content(center);
 				@include flexbox-align-items(center);
 				@include flexbox-justify(space-between);
@@ -207,6 +207,7 @@ a.button {
 			.logo {
 				padding: 0 5%;
 				order: 1;
+				margin: 0;
 				@media screen and (min-width: $midwidth){
 					width: 1/3*100%;
 					order: 2;
@@ -366,9 +367,31 @@ a.button {
 		}
 		>.col-4 {
 			padding: 0 0 0 20px;
-			img {
-				display: block;
-				width: 100%;
+			text-align: center;
+			>a {
+				max-width: 49%;
+				display: inline-block;
+				&:nth-child(odd){
+					padding: 0 5px 5px 0;
+				}
+				&:nth-child(even){
+					padding: 0 0 5px 5px;
+				}
+				img {
+					width: 100%;
+					display: block;
+				}
+
+			}
+			>img {
+				display: inline-block;
+				max-width: 49%;
+				&:nth-child(odd){
+					padding: 0 5px 5px 0;
+				}
+				&:nth-child(even){
+					padding: 0 0 5px 5px;
+				}
 			}
 		}
 	}

@@ -52,7 +52,7 @@
                         'posts_per_page'=>3,
                         'orderby'=>'meta_value_num',
                         'meta_key'=>'date',
-                        'order'=>'DESC',
+                        'order'=>'ASC',
                         'meta_query'=>array(
                             'key'=>'date',
                             'value'=>$today,
@@ -63,18 +63,15 @@
                     $query = new WP_Query($args);
                     if($query->have_posts()):?>
                         <div class="events">
-                            <div class="date">
-                                <?php echo (new DateTime())->format('F');?>
-                            </div><!--.date-->
                             <?php while($query->have_posts()): $query->the_post();?>
                                 <?php $date = get_field("date");?>
                                 <div class="event">
                                     <a href="<?php the_permalink();?>"> 
                                         <header>
-                                            <h4><?php the_title();?></h4>
                                             <div class="date">
                                                 <?php echo $date;?>
                                             </div><!--.date-->
+                                            <h4>| <?php the_title();?></h4>
                                         </header>
                                     </a>
                                 </div><!--.event-->
