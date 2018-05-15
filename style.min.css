@@ -960,6 +960,37 @@ aside.upcoming .events .event a.button{margin:20px 0 0 0;width:100%;font-size:18
 .template-history>.wrapper>.wrapper>.row-2>.col-2 ul li a{display:block;color:#819aa0;padding:10px;margin:0;text-decoration:none;font-size:16px;text-transform:uppercase;letter-spacing:2px}
 .template-history>.wrapper>.wrapper>.row-2>.col-2 ul li a:hover{color:white;background-color:#cfdfde}
 .template-history>.wrapper>.wrapper>.row-2>.col-2 ul li a.active{color:white;background-color:#cfdfde}
+.template-contact>.banner img{display:block;width:100%}
+.template-contact>.row-1{background-color:#cfdfde;color:white}
+.template-contact>.row-1>.wrapper ul{margin:0;padding:10px 0;text-align:center}
+.template-contact>.row-1>.wrapper ul li{list-style-type:none;margin:0;padding:0;display:inline-block}
+.template-contact>.row-1>.wrapper ul li:first-child a:before{display:none}
+.template-contact>.row-1>.wrapper ul li a{color:inherit;text-decoration:none;text-transform:uppercase;font-size:14px}
+@media screen and (min-width:900px){.template-contact>.row-1>.wrapper ul li a{font-size:16px}
+}.template-contact>.row-1>.wrapper ul li a:before{display:inline-block;content:"";margin:0 5px}
+@media screen and (min-width:600px){.template-contact>.row-1>.wrapper ul li a:before{content:"|";margin:0 20px}
+}.template-contact>.wrapper>.wrapper{text-align:left;padding:20px 0}
+@media screen and (min-width:600px){.template-contact>.wrapper>.wrapper{padding:3% 0 6% 0}
+}.template-contact>.wrapper>.wrapper>header.row-1{padding:0 0 10px 0}
+.template-contact>.wrapper>.wrapper>header.row-1 h1{margin:0;text-transform:uppercase;color:#819aa0;font-size:22px}
+@media screen and (min-width:600px){.template-contact>.wrapper>.wrapper>header.row-1 h1{font-size:30px}
+}.template-contact>.wrapper>.wrapper>.row-2{margin:20px 0 0 0}
+@media screen and (min-width:900px){.template-contact>.wrapper>.wrapper>.row-2{margin:40px 0 0 0}
+}.template-contact>.wrapper>.wrapper>.row-2>.col-1{text-align:left;margin:40px 0 0 0}
+@media screen and (min-width:600px){.template-contact>.wrapper>.wrapper>.row-2>.col-1{float:left;margin:0;min-height:1px;width:65%;padding:0 60px 0 0}
+}.template-contact>.wrapper>.wrapper>.row-2>.col-1 .sections .section{margin:30px 0 0 0}
+.template-contact>.wrapper>.wrapper>.row-2>.col-1 .sections .section:first-child{margin:0}
+.template-contact>.wrapper>.wrapper>.row-2>.col-1 .sections .section>a{width:100%;display:block}
+.template-contact>.wrapper>.wrapper>.row-2>.col-1 .sections .section header h2{margin:0;text-align:left;font-size:18px;color:#cfdfde;text-transform:uppercase}
+@media screen and (min-width:900px){.template-contact>.wrapper>.wrapper>.row-2>.col-1 .sections .section header h2{font-size:20px}
+}.template-contact>.wrapper>.wrapper>.row-2>.col-1 .sections .section .copy{margin:20px 0 0 0}
+.template-contact>.wrapper>.wrapper>.row-2>.col-2{position:relative}
+@media screen and (min-width:600px){.template-contact>.wrapper>.wrapper>.row-2>.col-2{float:right;min-height:1px;width:35%;margin:0;padding:0 0 0 40px}
+}.template-contact>.wrapper>.wrapper>.row-2>.col-2 ul{margin:0;padding:0}
+.template-contact>.wrapper>.wrapper>.row-2>.col-2 ul li{display:block;list-style-type:none;margin:0;padding:0}
+.template-contact>.wrapper>.wrapper>.row-2>.col-2 ul li a{display:block;color:#819aa0;padding:10px;margin:0;text-decoration:none;font-size:16px;text-transform:uppercase;letter-spacing:2px}
+.template-contact>.wrapper>.wrapper>.row-2>.col-2 ul li a:hover{color:white;background-color:#cfdfde}
+.template-contact>.wrapper>.wrapper>.row-2>.col-2 ul li a.active{color:white;background-color:#cfdfde}
 .template-boxes>.banner img{display:block;width:100%}
 .template-boxes>.row-1{background-color:#cfdfde;color:white}
 .template-boxes>.row-1>.wrapper ul{margin:0;padding:10px 0;text-align:center}
@@ -1003,7 +1034,7 @@ aside.upcoming .events .event a.button{margin:20px 0 0 0;width:100%;font-size:18
 }.template-events>.wrapper>.row-2 .copy{margin:20px 0 0 0}
 @media screen and (min-width:900px){.template-events>.wrapper>.row-2 .copy{margin:40px 0 0 0}
 }.template-events>.wrapper>.row-3{margin:40px 0 0 0}
-.template-events>.wrapper>.row-3 .event{position:relative;text-align:center;margin:20px 0}
+.template-events>.wrapper>.row-3 .event{position:relative;text-align:center;margin:40px 0}
 @media screen and (min-width:600px){.template-events>.wrapper>.row-3 .event{width:40%;margin:0;float:left;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-justify-content:flex-start;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 }@media screen and (min-width:600px){.template-events>.wrapper>.row-3 .event:nth-child(odd){margin:0 10% 10% 0}
 }@media screen and (min-width:600px){.template-events>.wrapper>.row-3 .event:nth-child(even){margin:0 0 10% 10%}

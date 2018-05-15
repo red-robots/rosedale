@@ -670,6 +670,159 @@
     }
 }
 
+.template-contact {
+    >.banner {
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    >.row-1 {
+        background-color: $color__rose-medium-green;
+        color: white;
+        >.wrapper {
+            ul {
+                margin: 0;
+                padding: 10px 0;
+                text-align: center;
+                li {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    display: inline-block;
+                    &:first-child {
+                        a {
+                            &:before {
+                                display: none;
+                            }
+                        }
+                    }
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        @media screen and (min-width: $midwidth){
+                            font-size: 16px;
+                        }
+                        &:before {
+                            display: inline-block;
+                            content: "";
+                            margin: 0 5px;
+                            @media screen and (min-width: $tabwidth){
+                                content: "|";
+                                margin: 0 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    >.wrapper {
+        >.wrapper {
+            text-align: left;
+            padding: 20px 0;
+            @media screen and (min-width: $tabwidth){
+                padding: 3% 0 6% 0;
+            }
+            >header.row-1 {
+                padding: 0 0 10px 0;
+                h1 {
+                    margin: 0;
+                    text-transform: uppercase;
+                    color: $color__rose-dark-green;
+                    font-size: 22px;
+                    @media screen and (min-width: $tabwidth){
+                        font-size: 30px;
+                    }
+                }
+            }
+            >.row-2 {
+                margin: 20px 0 0 0;
+                @media screen and (min-width: $midwidth){
+                    margin: 40px 0 0 0;
+                }
+                >.col-1 {
+                    text-align: left;
+                    margin: 40px 0 0 0;
+                    @media screen and (min-width: $tabwidth){
+                        float: left;
+                        margin: 0;
+                        min-height: 1px;
+                        width: 65%;
+                        padding: 0 60px 0 0;
+                    }
+                    .sections {
+                        .section {
+                            margin: 30px 0 0 0;
+                            &:first-child {
+                                margin: 0;
+                            }
+                            >a {
+                                width: 100%;
+                                display: block;
+                            }
+                            header {
+                                h2 {
+                                    margin: 0;
+                                    text-align: left;
+                                    font-size: 18px;
+                                    color: $color__rose-medium-green;
+                                    text-transform: uppercase;
+                                    @media screen and (min-width: $midwidth){
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                            .copy {
+                                margin: 20px 0 0 0;
+                            }
+                        }
+                    }
+                }
+                >.col-2 {
+                    position: relative;
+                    @media screen and (min-width: $tabwidth){
+                        float: right;
+                        min-height: 1px;
+                        width: 35%;
+                        margin: 0;
+                        padding: 0 0 0 40px;
+                    }
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                        li {
+                            display: block;
+                            list-style-type: none;
+                            margin: 0;
+                            padding: 0;
+                            a {
+                                display: block;
+                                color: $color__rose-dark-green;
+                                padding: 10px;
+                                margin: 0;
+                                text-decoration: none;
+                                font-size: 16px;
+                                text-transform: uppercase;
+                                letter-spacing: 2px;
+                                &:hover {
+                                    color: white;
+                                    background-color: $color__rose-medium-green;
+                                }
+                                &.active {
+                                    color: white;
+                                    background-color: $color__rose-medium-green;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 .template-boxes {
     >.banner {
         img {
@@ -882,7 +1035,7 @@
             .event {
                 position: relative;
                 text-align: center;
-                margin: 20px 0;
+                margin: 40px 0;
                 @media screen and (min-width: $tabwidth){
                     width: 40%;
                     margin: 0;
