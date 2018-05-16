@@ -28,6 +28,14 @@
                     <section class="copy">
                         <?php the_content();?>
                     </section><!--.copy-->
+                    <?php $gallery = get_field("gallery");
+                    if($gallery):?>
+                        <div class="gallery clear-bottom">
+                            <?php foreach($gallery as $row):?>
+                                <img src="<?php echo $row['sizes']['large'];?>" alt="<?php echo $row['alt'];?>">
+                            <?php endforeach;?>
+                        </div><!--.gallery-->
+                    <?php endif;?>
                 </div><!--.col-1-->
                 <aside class="col-2">
                     <?php $col_2 = get_field("col_2");
