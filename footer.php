@@ -44,17 +44,17 @@
 				if($tumblr_link||$facebook_link||$flickr_link):?>
 					<div class="social">
 						<?php if($tumblr_link):?>
-							<a href="<?php echo $tumblr_link;?>">
+							<a target="_blank" href="<?php echo $tumblr_link;?>">
 								<i class="fa fa-tumblr"></i>
 							</a>
 						<?php endif;?>
 						<?php if($facebook_link):?>
-							<a href="<?php echo $facebook_link;?>">
+							<a target="_blank" href="<?php echo $facebook_link;?>">
 								<i class="fa fa-facebook"></i>
 							</a>
 						<?php endif;?>
 						<?php if($flickr_link):?>
-							<a href="<?php echo $flickr_link;?>">
+							<a target="_blank" href="<?php echo $flickr_link;?>">
 								<i class="fa fa-flickr"></i>
 							</a>
 						<?php endif;?>

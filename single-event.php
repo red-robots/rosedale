@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all event single posts.
+ * The template for displaying all event single event posts.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
