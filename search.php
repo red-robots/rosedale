@@ -7,6 +7,8 @@
  * @package ACStarter
  */
 
+wp_redirect(get_bloginfo('url'));
+exit;
 get_header(); ?>
 
 	<section id="primary" class="content-area">

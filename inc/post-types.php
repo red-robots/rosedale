@@ -39,37 +39,6 @@ function js_custom_init()
   register_post_type('event',$args); // name used in query
 
   
-     $labels = array(
-	'name' => _x('Staff', 'post type general name'),
-    'singular_name' => _x('Staff', 'post type singular name'),
-    'add_new' => _x('Add New', 'Staff Member'),
-    'add_new_item' => __('Add New Staff Member'),
-    'edit_item' => __('Edit Staff Member'),
-    'new_item' => __('New Staff Member'),
-    'view_item' => __('View Staff Member'),
-    'search_items' => __('Search Staff Members'),
-    'not_found' =>  __('No Staff Members found'),
-    'not_found_in_trash' => __('No Staff Members found in Trash'), 
-    'parent_item_colon' => '',
-    'menu_name' => 'Staff'
-  );
-  $args = array(
-	'labels' => $labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' => true, 
-    'show_in_menu' => true, 
-    'query_var' => true,
-    'rewrite' => true,
-    'capability_type' => 'post',
-    'has_archive' => false, 
-    'hierarchical' => true, // 'false' acts like posts 'true' acts like pages
-    'menu_position' => 20,
-    'supports' => array('title','editor','custom-fields','thumbnail'),
-	
-  ); 
-  register_post_type('staff',$args); // name used in query
-  
   // Add more between here
   
   // and here
