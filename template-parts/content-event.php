@@ -85,25 +85,20 @@
                     <?php endif;?>
                     <div class="events">
                         <?php while($query->have_posts()): $query->the_post();?>
-                            <?php $date = get_field("date");
-                            $description = get_field("brief_description");
-                            if($date||$description):?>
-                                <div class="event">
-                                    <a href="<?php the_permalink();?>">
-                                        <?php if($date):
-                                            $display_date = (new DateTime($date))->format('F j, Y');?>
-                                            <div class="date">
-                                                <?php echo $display_date;?>
-                                            </div><!--.date-->
-                                        <?php endif;?>
-                                        <?php if($description):?>
-                                            <div class="copy">
-                                                <?php echo $description;?>
-                                            </div><!--.copy-->
-                                        <?php endif;?>
-                                    </a>
-                                </div><!--.event-->
-                            <?php endif;?>
+                            <?php $date = get_field("date");?>
+                            <div class="event">
+                                <a href="<?php the_permalink();?>">
+                                    <?php if($date):
+                                        $display_date = (new DateTime($date))->format('F j, Y');?>
+                                        <div class="date">
+                                            <?php echo $display_date;?>
+                                        </div><!--.date-->
+                                    <?php endif;?>
+                                    <div class="copy">
+                                        <?php the_title();?>
+                                    </div><!--.copy-->
+                                </a>
+                            </div><!--.event-->
                         <?php endwhile;?>
                     </div><!--.events-->
                     <?php wp_reset_postdata();
