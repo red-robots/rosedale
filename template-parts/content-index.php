@@ -68,9 +68,12 @@
                                 <div class="event">
                                     <a href="<?php the_permalink();?>"> 
                                         <header>
-                                            <div class="date">
-                                                <?php echo $date;?>
-                                            </div><!--.date-->
+                                            <?php if($date):
+                                                $display_date = (new DateTime($date))->format('F j, Y');?>
+                                                <div class="date">
+                                                    <?php echo $display_date;?>
+                                                </div><!--.date-->
+                                            <?php endif;?>
                                             <h4>| <?php the_title();?></h4>
                                         </header>
                                     </a>

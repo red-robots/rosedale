@@ -1,10 +1,11 @@
-<?php $args = array(
+<?php $today = date('Ymd');
+$args = array(
     'post_type'=>'event',
     'posts_per_page'=>2,
     'post__not_in'=>array(get_the_ID()),
     'orderby'=>'meta_value_num',
     'meta_key'=>'date',
-    'order'=>'DESC',
+    'order'=>'ASC',
     'meta_query'=>array(
         'key'=>'date',
         'value'=>$today,
@@ -31,9 +32,10 @@ if($query->have_posts()):?>
                     <?php if($image):?>
                         <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
                     <?php endif;
-                    if($date):?>
+                    if($date):
+                        $display_date = (new DateTime($date))->format('F j, Y');?>
                         <div class="date">
-                            <?php echo $date;?>
+                            <?php echo $display_date;?>
                         </div><!--.date-->
                     <?php endif;?>
                     <?php if($description):?>

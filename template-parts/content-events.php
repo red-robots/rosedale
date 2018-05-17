@@ -26,12 +26,13 @@
                 <?php the_content();?>
             </div><!--.copy-->
         </section><!--.row-2-->
-        <?php $args = array(
+        <?php $today = date('Ymd');
+        $args = array(
             'post_type'=>'event',
             'posts_per_page'=>-1,
             'orderby'=>'meta_value_num',
             'meta_key'=>'date',
-            'order'=>'DESC',
+            'order'=>'ASC',
             'meta_query'=>array(
                 'key'=>'date',
                 'value'=>$today,
@@ -54,9 +55,10 @@
                         <?php if($image):?>
                             <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
                         <?php endif;
-                        if($date):?>
+                        if($date):
+                            $display_date = (new DateTime($date))->format('F j, Y');?>
                             <div class="date">
-                                <?php echo $date;?>
+                                <?php echo $display_date;?>
                             </div><!--.date-->
                         <?php endif;?>
                         <div class="description">

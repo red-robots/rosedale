@@ -21,9 +21,10 @@
             <h1><?php the_title();?></h1>
         </header>
         <?php $date = get_field("date");
-        if($date):?>
+        if($date):
+            $display_date = (new DateTime($date))->format('F j, Y');?>
             <div class="date row-2">
-                <?php echo $date;?>
+                <?php echo $display_date;?>
             </div><!--.date-->
         <?php endif;?>
         <div class="row-3 clear-bottom">
@@ -41,7 +42,7 @@
                 <?php endif;
                 if($date):?>
                     <div class="date-time">
-                        <?php echo $date;
+                        <?php echo $display_date;
                         if($time):
                             echo " - ".$time;
                         endif;?>
@@ -59,13 +60,14 @@
                 <?php endif;?>
             </section><!--.col-1-->
             <aside class="col-2">
-                <?php $args = array(
+                <?php $today = date('Ymd');
+                $args = array(
                     'post_type'=>'event',
                     'posts_per_page'=>5,
                     'post__not_in'=>array(get_the_ID()),
                     'orderby'=>'meta_value_num',
                     'meta_key'=>'date',
-                    'order'=>'DESC',
+                    'order'=>'ASC',
                     'meta_query'=>array(
                         'key'=>'date',
                         'value'=>$today,
@@ -88,9 +90,10 @@
                             if($date||$description):?>
                                 <div class="event">
                                     <a href="<?php the_permalink();?>">
-                                        <?php if($date):?>
+                                        <?php if($date):
+                                            $display_date = (new DateTime($date))->format('F j, Y');?>
                                             <div class="date">
-                                                <?php echo $date;?>
+                                                <?php echo $display_date;?>
                                             </div><!--.date-->
                                         <?php endif;?>
                                         <?php if($description):?>
@@ -107,6 +110,5 @@
                 endif;?>
             </aside><!--.col-2-->
         </div><!--.row-3-->
-        <?php get_template_part( 'template-parts/upcoming' );?>
     </div><!--.wrapper-->
 </article><!-- #post-## -->

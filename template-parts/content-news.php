@@ -27,13 +27,14 @@
                 </div><!--.copy-->
             </section><!--.col-1-->
             <aside class="col-2">
-                <?php $args = array(
+                <?php $today = date('Ymd');
+                $args = array(
                     'post_type'=>'event',
                     'posts_per_page'=>5,
                     'post__not_in'=>array(get_the_ID()),
                     'orderby'=>'meta_value_num',
                     'meta_key'=>'date',
-                    'order'=>'DESC',
+                    'order'=>'ASC',
                     'meta_query'=>array(
                         'key'=>'date',
                         'value'=>$today,
@@ -56,9 +57,10 @@
                             if($date||$description):?>
                                 <div class="event">
                                     <a href="<?php the_permalink();?>">
-                                        <?php if($date):?>
+                                        <?php if($date):
+                                            $display_date = (new DateTime($date))->format('F j, Y');?>
                                             <div class="date">
-                                                <?php echo $date;?>
+                                                <?php echo $display_date;?>
                                             </div><!--.date-->
                                         <?php endif;?>
                                         <?php if($description):?>
