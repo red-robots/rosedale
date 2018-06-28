@@ -1,6 +1,6 @@
 <?php $parent = wp_get_post_parent_id(get_the_ID())==0?get_the_ID():wp_get_post_parent_id(get_the_ID());?>
 <div class="nav-bar">    
-    <div class="wrapper cap">
+    <div class="wrapper cap scrollspy">
         <?php $args = array(
             'post_parent'=>$parent,
             'posts_per_page'=>-1,
@@ -8,7 +8,7 @@
         );
         $query = new WP_Query($args);
         if($query->have_posts()):?>
-            <ul>
+            <ul id="nav"lass="nav hidden-xs hidden-sm" data-spy="affix">
                 <?php while($query->have_posts()):$query->the_post();?>
                     <li>
                         <a href="<?php the_permalink();?>">

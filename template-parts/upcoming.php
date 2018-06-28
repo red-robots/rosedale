@@ -1,3 +1,52 @@
+<?php if( is_page(179) ) : // things to do at Rosedale ?>
+<aside class="upcoming">
+    <header>
+        <h2>View Our Tours</h2>
+    </header>
+    <div class="tours-butn-wrap">
+        <a class="button" href="<?php bloginfo('url');?>/tours">
+            Tours
+        </a><!--.link-->
+    </div>
+</aside>
+<?php elseif ( is_page(60) ) : ?>
+<aside class="upcoming">
+    <header>
+        <h2>View Our Hours &amp; Directions</h2>
+    </header>
+    <div class="tours-butn-wrap">
+        <a class="button" href="<?php bloginfo('url');?>/visit/hours-directions/">
+            Hours &amp; Directions
+        </a><!--.link-->
+    </div>
+</aside>
+<?php elseif ( is_page(56) ) : ?>
+<aside class="upcoming">
+    <header>
+        <h2>Contact Us</h2>
+    </header>
+    <div class="tours-butn-wrap">
+        <a class="button" href="<?php bloginfo('url');?>/contact/">
+            Contact
+        </a><!--.link-->
+    </div>
+</aside>
+<?php elseif ( is_page('weddings') ) : ?>
+<aside class="upcoming">
+    <header>
+        <h2>Helpful Wedding Links</h2>
+    </header>
+    <div class="tours-butn-wrap">
+        <a class="button" href="<?php bloginfo('url');?>/plan-an-event/rental-rates/#gardensgroundsrates">
+            Gardens &amp; Grounds Rates
+        </a><!--.link-->
+        <a class="button" href="<?php bloginfo('url');?>/plan-an-event/rental-rates/#photofilmshootrates">
+            Photo &amp; Film Shoot Rates
+        </a><!--.link-->
+    </div>
+</aside>
+<?php else : endif; ?>
+
 <?php $today = date('Ymd');
 $args = array(
     'post_type'=>'event',
@@ -17,7 +66,7 @@ $query = new WP_Query($args);
 if($query->have_posts()):?>
     <aside class="upcoming">
         <header>
-            <h2>Upcoming</h2>
+            <h2>Upcoming Events &amp; Programs</h2>
         </header>
         <div class="events clear-bottom">
             <?php while($query->have_posts()):$query->the_post();?>

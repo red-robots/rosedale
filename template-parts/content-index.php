@@ -83,7 +83,7 @@
                         <?php wp_reset_postdata();
                     endif;
                     if($events_read_more):?>
-                        <a class="button" href="<?php echo get_permalink();?>">
+                        <a class="button" href="<?php bloginfo('url'); ?>/calendar">
                             <?php echo $events_read_more;?>
                         </a>
                     <?php endif;?>

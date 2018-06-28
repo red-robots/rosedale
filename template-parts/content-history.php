@@ -26,6 +26,7 @@
             <div class="row-2 clear-bottom">
                 <aside class="col-2">
                     <?php if($sections):?>
+                        <nav>
                         <ul>
                             <?php foreach($sections as $section):
                                 $title = $section['title'];
@@ -38,16 +39,19 @@
                                 <?php endif;
                             endforeach;?>
                         </ul>
+                        </nav>
                     <?php endif;?>
                 </aside><!--.col-2-->
                 <div class="col-1">
                     <?php if($sections):?>
                         <div class="sections">
+                        <!-- <a name="<?php echo strtolower(preg_replace('/[^0-9A-Za-z]/','',sanitize_title_with_dashes($title)));?>"></a> -->
+                        
                             <?php foreach($sections as $section):
                                 $title = $section['title'];
                                 $copy = $section['copy'];
                                 if($title||$copy):?>
-                                    <section class="section">
+                                    <section class="section "id="<?php echo strtolower(preg_replace('/[^0-9A-Za-z]/','',sanitize_title_with_dashes($title)));?>">
                                         <?php if($title):?>
                                             <a name="<?php echo strtolower(preg_replace('/[^0-9A-Za-z]/','',sanitize_title_with_dashes($title)));?>"></a>
                                             <header>
