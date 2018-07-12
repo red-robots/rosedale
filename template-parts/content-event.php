@@ -60,6 +60,11 @@
                 <?php endif;?>
             </section><!--.col-1-->
             <aside class="col-2">
+            <div class="sideevent">
+                <div >
+                    <a class="button" href="<?php bloginfo('url'); ?>/calendar">Full Calendar</a>
+                </div>
+            </div>
                 <?php $today = date('Ymd');
                 $args = array(
                     'post_type'=>'event',

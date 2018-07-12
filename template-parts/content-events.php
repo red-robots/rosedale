@@ -76,4 +76,12 @@
             </div><!--.events-->
         <?php endif;?>
     </div><!--.wrapper-->
+
+
+    <div class="sideevent">
+                <div >
+                    <a class="button" href="<?php bloginfo('url'); ?>/calendar">Full Calendar</a>
+                </div>
+            </div>
+    
 </article><!-- #post-## -->

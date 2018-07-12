@@ -43,6 +43,11 @@
                     endif;?>
                 <?php endforeach;?>
             </div><!--.row-3-->
+            <div class="calendar-but">
+                <div >
+                    <a class="button" href="<?php bloginfo('url'); ?>/calendar">Full Calendar</a>
+                </div>
+            </div>
         <?php endif;?>
         <?php get_template_part( 'template-parts/upcoming' );?>
     </div><!--.wrapper-->

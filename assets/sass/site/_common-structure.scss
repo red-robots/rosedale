@@ -118,7 +118,7 @@ body {
 		}
 	}
 }
-a.button {
+a.button, input.ticket-selector-submit-btn {
 	background-color: $color__rose-dark-green;
 	border-radius: 999px;
 	border: 1px solid $color__rose-dark-green;
@@ -133,6 +133,10 @@ a.button {
 		color: $color__rose-dark-green;
 		background-color: white;
 	}
+}
+input.ticket-selector-submit-btn {
+	box-shadow: none;
+	text-shadow: none;
 }
 #masthead {
 	>.row-1 {
@@ -605,6 +609,16 @@ aside.upcoming {
 	a.button {
 		display: inline-block;
 	}
+}
+.sideevent {
+	width: 100%;
+	margin: 0 0 30px 0;
+	float: left;
+}
+.calendar-but {
+	width: 100%;
+	margin: 30px auto;
+	text-align: center;
 }
 
 

@@ -746,8 +746,9 @@ body{position:relative}
 .copy>ul li a:hover,.copy>ol li a:hover{color:#819aa0}
 .copy>ul li ul.sub-menu,.copy>ol li ul.sub-menu{margin:0}
 .copy>ol li{list-style-type:decimal}
-a.button{background-color:#819aa0;border-radius:999px;border:1px solid #819aa0;padding:5px 30px;color:white;font-size:16px;text-transform:uppercase;display:inline-block;text-decoration:none;-webkit-transition:all ease .2s;transition:all ease .2s}
-a.button:hover{color:#819aa0;background-color:white}
+a.button,input.ticket-selector-submit-btn{background-color:#819aa0;border-radius:999px;border:1px solid #819aa0;padding:5px 30px;color:white;font-size:16px;text-transform:uppercase;display:inline-block;text-decoration:none;-webkit-transition:all ease .2s;transition:all ease .2s}
+a.button:hover,input.ticket-selector-submit-btn:hover{color:#819aa0;background-color:white}
+input.ticket-selector-submit-btn{box-shadow:none;text-shadow:none}
 #masthead>.row-1{background-color:white}
 #masthead>.row-1>.wrapper{padding:10px 20px;text-align:center}
 @media screen and (min-width:900px){#masthead>.row-1>.wrapper{padding:5px 30px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:flex-start;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
@@ -840,6 +841,8 @@ aside.upcoming .events .event a.button{margin:20px 0 0 0;width:100%;font-size:18
 }.nav-bar>.wrapper ul li a.active,.nav-bar>.wrapper ul li a:hover{background-color:#e9f5f1}
 .tours-butn-wrap{width:100%;text-align:center}
 .tours-butn-wrap a.button{display:inline-block}
+.sideevent{width:100%;margin:0 0 30px 0;float:left}
+.calendar-but{width:100%;margin:30px auto;text-align:center}
 .template-index{padding:0 0 20px 0}
 @media screen and (min-width:600px){.template-index{padding:0 0 100px 0}
 }.template-index>.flexslider.row-1 ul.slides li img{width:100%;display:block}
