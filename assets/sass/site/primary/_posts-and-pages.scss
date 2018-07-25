@@ -23,7 +23,7 @@
                     // text-transform: uppercase;
                     color: $color__rose-dark-green;
                     font-size: 22px;
-                    font-family: 'Great Vibes', Helvetica, sans-serif;
+                    font-family: $script;
                     text-align: center;
                     @media screen and (min-width: $tabwidth){
                         font-size: 50px;

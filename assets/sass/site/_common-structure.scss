@@ -227,6 +227,12 @@ input.ticket-selector-submit-btn {
 								font-size: 14px;
                                 position: relative;
 								@media screen and (min-width: $midwidth){
+									font-size: 10px;
+								}
+								@media screen and (min-width: $xmidwidth){
+									font-size: 14px;
+								}
+								@media screen and (min-width: $deskwidth){
 									font-size: 16px;
 								}
                                 &:after {
@@ -304,6 +310,12 @@ input.ticket-selector-submit-btn {
 								font-size: 14px;
 								position: relative;
 								@media screen and (min-width: $midwidth){
+									font-size: 10px;
+								}
+								@media screen and (min-width: $xmidwidth){
+									font-size: 14px;
+								}
+								@media screen and (min-width: $deskwidth){
 									font-size: 16px;
 								}
                                 &:after {
@@ -347,7 +359,7 @@ input.ticket-selector-submit-btn {
 			margin: 20px 0 0 0;
 			text-align: center;
 			@media screen and (min-width: $midwidth){
-				width: 1/4*90%;
+				// width: 1/4*90%;
 				text-align: left;
 				margin: 0;
 			}
@@ -356,6 +368,9 @@ input.ticket-selector-submit-btn {
 			}
 		}
 		>.col-1 {
+			@media screen and (min-width: $midwidth){
+				width: 14%
+			}
 			header {
 				margin:0 0 5px 0;
 				h2 {
@@ -409,6 +424,9 @@ input.ticket-selector-submit-btn {
 			iframe {
 				width: 100%;
 			}
+			@media screen and (min-width: $midwidth){
+				width: 23%
+			}
 		}
 		>.col-3 {
 			header {
@@ -427,10 +445,16 @@ input.ticket-selector-submit-btn {
 			.hours {
 				font-size: 14px;
 			}
+			@media screen and (min-width: $midwidth){
+				width: 28%
+			}
 		}
 		>.col-4 {
 			padding: 0 0 0 20px;
 			text-align: center;
+			@media screen and (min-width: $midwidth){
+				width: 22%
+			}
 			>a {
 				max-width: 49%;
 				display: inline-block;
@@ -597,6 +621,7 @@ aside.upcoming {
 					
 					&.active, &:hover {
 						background-color: $color__rose-light-green;
+						font-weight: bold;
 					}
 				}
 			}

@@ -4,7 +4,9 @@
         <?php $args = array(
             'post_parent'=>$parent,
             'posts_per_page'=>-1,
-            'post_type'=>'page'
+            'post_type'=>'page',
+            'order' => 'ASC',
+            'orderby' => 'title'
         );
         $query = new WP_Query($args);
         if($query->have_posts()):?>
