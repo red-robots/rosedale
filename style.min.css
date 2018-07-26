@@ -746,7 +746,7 @@ body{position:relative}
 .copy>ul li a:hover,.copy>ol li a:hover{color:#819aa0}
 .copy>ul li ul.sub-menu,.copy>ol li ul.sub-menu{margin:0}
 .copy>ol li{list-style-type:decimal}
-a.button,input.ticket-selector-submit-btn{background-color:#819aa0;border-radius:999px;border:1px solid #819aa0;padding:5px 30px;color:white;font-size:16px;text-transform:uppercase;display:inline-block;text-decoration:none;-webkit-transition:all ease .2s;transition:all ease .2s}
+a.button,input.ticket-selector-submit-btn{background-color:#819aa0;border-radius:999px;border:1px solid #819aa0;padding:10px 30px;color:white;font-size:18px;text-transform:uppercase;display:inline-block;text-decoration:none;-webkit-transition:all ease .2s;transition:all ease .2s}
 a.button:hover,input.ticket-selector-submit-btn:hover{color:#819aa0;background-color:white}
 input.ticket-selector-submit-btn{box-shadow:none;text-shadow:none}
 #masthead>.row-1{background-color:white}
@@ -973,7 +973,7 @@ aside.upcoming .events .event a.button{margin:20px 0 0 0;width:100%;font-size:18
 }.template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section{margin:30px 0 0 0}
 .template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section:first-child{margin:0}
 .template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section>a{width:100%;display:block}
-.template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section header h2{margin:0;text-align:left;font-size:18px;color:#819aa0;font-size:16px;text-transform:uppercase;letter-spacing:2px}
+.template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section header h2{margin:0;text-align:left;color:#819aa0;font-size:20px;text-transform:uppercase;letter-spacing:2px}
 .template-history>.wrapper>.wrapper>.row-2>.col-1 .sections .section .copy{margin:20px 0 0 0}
 .template-history>.wrapper>.wrapper>.row-2>.col-2{position:relative}
 @media screen and (min-width:600px){.template-history>.wrapper>.wrapper>.row-2>.col-2{float:right;min-height:1px;width:35%;margin:0;padding:0 0 0 40px}

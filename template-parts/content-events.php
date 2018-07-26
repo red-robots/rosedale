@@ -79,7 +79,7 @@
 
 
     <div class="sideevent">
-                <div >
+                <div style="text-align: center;">
                     <a class="button" href="<?php bloginfo('url'); ?>/calendar">Full Calendar</a>
                 </div>
             </div>
