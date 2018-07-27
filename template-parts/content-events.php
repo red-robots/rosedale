@@ -50,10 +50,14 @@
                     $description = get_field("brief_description");?>
                     <section class="event js-blocks">
                         <header>
-                            <h3><?php the_title();?></h3>
+                            <h3>
+                                <a href="<?php the_permalink();?>"><?php the_title();?></a>
+                            </h3>
                         </header>
                         <?php if($image):?>
-                            <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+                            <a href="<?php the_permalink();?>">
+                                <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+                            </a>
                         <?php endif;
                         if($date):
                             $display_date = (new DateTime($date))->format('F j, Y');?>

@@ -370,6 +370,7 @@
 }
 
 .template-event {
+
     >.banner {
         img {
             display: block;
@@ -412,6 +413,7 @@
             @media screen and (min-width: $midwidth){
                 margin: 40px 0 0 0;
             }
+
             >.col-1 {
                 text-align: center;
                 @media screen and (min-width: $midwidth){
@@ -999,6 +1001,10 @@
                         text-align: center;
                         @media screen and (min-width: $midwidth){
                             font-size: 25px;
+                        }
+                        a {
+                            text-decoration: none;
+                            color: $color__rose-dark-green;
                         }
                     }
                 }

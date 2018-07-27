@@ -39,6 +39,7 @@ function acstarter_setup() {
     'right-nav' => esc_html__( 'Right Nav', 'acstarter' ),
     'left-nav' => esc_html__( 'Left Nav', 'acstarter' ),
     'sitemap' => esc_html__( 'Sitemap', 'acstarter' ),
+    'mobile-nav' => esc_html__( 'Mobile', 'acstarter' ),
   ) );
 
   /*
