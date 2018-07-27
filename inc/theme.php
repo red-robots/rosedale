@@ -6,7 +6,21 @@
  *
  * @package ACStarter
  */
+/* 
+  Event Espresso - Change category order
 
+The example below moves the 4th category to position 1 and the 3rd category to position 4 */
+function ee_custom_category_legend_order(){
+    wp_add_inline_script( 
+        'espresso_calendar',
+        'jQuery( document ).ready(function($) {
+            var options = $("#ee-category-legend-ul .has-sub"); 
+            $( options[ 2 ] ).insertBefore( $(options[ 0 ] ) );
+            $( options[ 1 ] ).insertAfter( $(options[ 2 ] ) );
+        } );'
+    );
+}
+add_action( 'wp_enqueue_scripts', 'ee_custom_category_legend_order', 11 );
 /*-------------------------------------
 	Custom client login, link and title.
 ---------------------------------------*/
