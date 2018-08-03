@@ -8,11 +8,12 @@
  */
 
 get_header(); ?>
-
+<div class="wrapper cap">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
+		$i=0;
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
@@ -22,18 +23,40 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
+			<div class="news-articles">
+				
+			
 			<?php
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
+			while ( have_posts() ) : the_post(); $i++;
+				if($i==2){
+				 	$class='right';
+				 	$i=0;
+				 } else {
+				 	$class='left';
+				 }
+					 ?>
+			<section class="group <?php echo $class; ?> js-blocks">
+		 				<div class="image">
+		 					<?php if(has_post_thumbnail()) {
+		 						the_post_thumbnail();
+		 					} else { ?>
+		 					<img src="<?php bloginfo('template_url'); ?>/images/default.jpg">
+		 					<?php } ?>
+		 				</div>
+		 				
+		 			
+		 			<div class="col-2">
+		 				<header>
+		 					<h2><?php the_title(); ?></h2>
+		 				</header>
+		 				<?php the_excerpt(); ?>
+		 				<div>
+		 					<a class="button" href="<?php the_permalink(); ?>">READ MORE</a>
+		 				</div>
+		 			</div>		
+		 		</section>
+			<?php endwhile;
 
 			the_posts_navigation();
 
@@ -42,10 +65,10 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
+		</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div>
 <?php
-get_sidebar();
 get_footer();

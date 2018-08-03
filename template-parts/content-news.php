@@ -23,11 +23,24 @@
         <div class="row-3 clear-bottom">
             <section class="col-1">
                 <div class="copy">
+                <?php  if(has_post_thumbnail()) {
+                                        the_post_thumbnail();
+                                    } ?>
                     <?php the_content();?>
                 </div><!--.copy-->
             </section><!--.col-1-->
             <aside class="col-2">
-                <?php $today = date('Ymd');
+            <div class="widget">
+            <h2>Sign Up for Our Newsletter</h2>
+                <a class="button" href="https://visitor.r20.constantcontact.com/manage/optin/ea?v=001qpcI2uFx_R6axja6B7Vb3ED78WMHtERqkhj-5TRXAIzILE4rmi9oPBMVSEBtovPyOkLD3CL4M4Y7eqJZOrMt2g%3D%3D" target="_blank">Sign Up</a>
+            </div>
+                <?php 
+
+
+
+                get_sidebar();
+
+                $today = date('Ymd');
                 $args = array(
                     'post_type'=>'event',
                     'posts_per_page'=>5,
