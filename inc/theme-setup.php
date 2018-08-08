@@ -40,6 +40,9 @@ function acstarter_setup() {
     'left-nav' => esc_html__( 'Left Nav', 'acstarter' ),
     'sitemap' => esc_html__( 'Sitemap', 'acstarter' ),
     'mobile-nav' => esc_html__( 'Mobile', 'acstarter' ),
+    'plan-event' => esc_html__( 'Plan Event Subnav', 'acstarter' ),
+    'visit' => esc_html__( 'Visit Subnav', 'acstarter' ),
+    'about' => esc_html__( 'About Subnav', 'acstarter' ),
   ) );
 
   /*
