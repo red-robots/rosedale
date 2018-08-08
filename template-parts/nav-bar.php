@@ -12,7 +12,7 @@
         	} elseif( $parent == 10 ) {
         		wp_nav_menu( array( 'theme_location' => 'visit') );
         	} elseif( $parent == 5 ) {
-        		wp_nav_menu( array( 'theme_location' => 'visit') );
+        		wp_nav_menu( array( 'theme_location' => 'about') );
         	} else {
 
         	}

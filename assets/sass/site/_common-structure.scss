@@ -602,11 +602,11 @@ aside.upcoming {
 				padding: 0;
 				display: inline-block;
 				&:first-child {
-					a {
+					
 						&:before {
-							display: none;
+							content: "";
 						}
-					}
+					
 				}
 				&:before {
 						display: inline-block;

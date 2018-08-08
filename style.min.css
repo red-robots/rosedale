@@ -881,7 +881,7 @@ aside.upcoming .events .event a.button{margin:20px 0 0 0;width:100%;font-size:18
 }.nav-bar{background-color:white;color:grey}
 .nav-bar>.wrapper ul{margin:0;padding:0;text-align:center}
 .nav-bar>.wrapper ul li{list-style-type:none;margin:0;padding:0;display:inline-block}
-.nav-bar>.wrapper ul li:first-child a:before{display:none}
+.nav-bar>.wrapper ul li:first-child:before{content:""}
 .nav-bar>.wrapper ul li:before{display:inline-block;content:"";margin:0 5px}
 @media screen and (min-width:600px){.nav-bar>.wrapper ul li:before{content:"|";margin:0 20px}
 }.nav-bar>.wrapper ul li a{color:inherit;text-decoration:none;text-transform:uppercase;font-size:14px;padding:10px;display:inline-block}
