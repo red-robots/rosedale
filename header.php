@@ -21,6 +21,13 @@
 <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
 
 <?php wp_head(); ?>
+
+<script type="de8c27cdd751fb9d1ded4358-text/javascript">var _gaq=[['_setAccount','UA-27981522-1'],['_trackPageview'],['_trackPageLoadTime']];(function(d,t){
+var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.async=1;g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)
+}(document,'script'))</script>
+
+
 </head>
 
 <body <?php body_class(); ?> ata-spy="scroll" data-target=".scrollspy">
@@ -55,7 +62,33 @@
 		<div class="row-2">
 			<div class="wrapper cap-nopad">
 				<nav id="site-navigation" class="main-navigation mobile-nav">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'acstarter' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<nav role="navigation">
+					  <div id="menuToggle">
+					    <!--
+					    A fake / hidden checkbox is used as click reciever,
+					    so you can use the :checked selector on it.
+					    -->
+					    <input type="checkbox" />
+					    
+					    <!--
+					    Some spans to act as a hamburger.
+					    
+					    They are acting like a real hamburger,
+					    not that McDonalds stuff.
+					    -->
+					    <span></span>
+					    <span></span>
+					    <span></span>
+					    
+					    <!--
+					    Too bad the menu has to be inside of the button
+					    but hey, it's pure CSS magic.
+					    -->
+					    <ul id="menu"></ul>
+					  </div>
+					</nav>
+				</button>
 					<?php wp_nav_menu( array( 'theme_location' => 'mobile-nav' ) ); ?>
 				</nav>
 				<nav class="left-nav" role="navigation">
