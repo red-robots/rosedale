@@ -368,7 +368,15 @@
         }
     }
 }
-
+section.home-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    a.button.spacer {
+        margin: 30px auto;
+    }
+}
 .template-event {
 
     >.banner {
@@ -1146,5 +1154,17 @@
                 }
             }
         }
+    }
+}
+.mobilecal {
+
+    @media screen and (min-width: $tabwidth){
+        display: none;
+    }
+}
+.deskcal {
+    display: none;
+    @media screen and (min-width: $tabwidth){
+        display: block;
     }
 }

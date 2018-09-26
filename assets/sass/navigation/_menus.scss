@@ -169,7 +169,7 @@ button.menu-toggle {
 	background-color: rgba(#fff, 0);
 	color: #fff;
 	box-shadow: none;
-	width: 40px;
+	width: 100px;
 	position: relative;
 	display: inline-block;
 	margin: 10px auto;
@@ -293,8 +293,8 @@ button.menu-toggle {
 #menuToggle {
   display: block;
   position: relative;
-  top: 25px;
-  left: 0px;
+  top: 8px;
+  left: 33px;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;

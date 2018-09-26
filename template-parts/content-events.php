@@ -48,7 +48,7 @@
                     $date = get_field("date");
                     $view_text = get_field("view_events_text","option");
                     $description = get_field("brief_description");?>
-                    <section class="event js-blocks">
+                    <section class="event js-blocks-nouse">
                         <header>
                             <h3>
                                 <a href="<?php the_permalink();?>"><?php the_title();?></a>

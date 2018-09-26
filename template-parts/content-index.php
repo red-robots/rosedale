@@ -185,13 +185,16 @@
     if($title&&$description):?>
         <div class="row-4">
             <div class="wrapper cap">
-                <section>
+                <section class="home-about">
                     <header>
                         <h2><?php echo $title;?></h2>
                     </header>
                     <div class="copy">
                         <?php echo $description;?>
                     </div><!--.copy-->
+                    <a href="<?php bloginfo('url'); ?>/about/rosedale-today" class="button spacer">
+                        Learn More
+                    </a>
                 </section>
             </div><!--.wrapper-->
         </div><!--.row-4-->

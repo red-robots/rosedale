@@ -62,7 +62,7 @@ g.async=1;g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s
 		<div class="row-2">
 			<div class="wrapper cap-nopad">
 				<nav id="site-navigation" class="main-navigation mobile-nav">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"> MENU
 					<nav role="navigation">
 					  <div id="menuToggle">
 					    <!--
