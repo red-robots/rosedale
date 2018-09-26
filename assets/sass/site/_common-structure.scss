@@ -656,5 +656,16 @@ aside.upcoming {
 }
 
 
+.mobilecal {
 
+    @media screen and (min-width: $tabwidth){
+        display: none;
+    }
+}
+.deskcal {
+    display: none;
+    @media screen and (min-width: $tabwidth){
+        display: block;
+    }
+}
 

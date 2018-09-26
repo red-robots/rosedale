@@ -899,7 +899,10 @@ aside.upcoming .events .event a.button{margin:20px 0 0 0;width:100%;font-size:18
 .tours-butn-wrap a.button{display:inline-block}
 .sideevent{width:100%;margin:30px 0 30px 0;float:left}
 .calendar-but{width:100%;margin:30px auto;text-align:center}
-.template-index{padding:0 0 20px 0}
+@media screen and (min-width:600px){.mobilecal{display:none}
+}.deskcal{display:none}
+@media screen and (min-width:600px){.deskcal{display:block}
+}.template-index{padding:0 0 20px 0}
 @media screen and (min-width:600px){.template-index{padding:0 0 100px 0}
 }.template-index>.flexslider.row-1 ul.slides li img{width:100%;display:block}
 .template-index>.row-2>.wrapper{padding:20px 0 40px 0}
@@ -1136,9 +1139,6 @@ section.home-about a.button.spacer{margin:30px auto}
 @media screen and (min-width:600px){.news-articles .group>.col-2>.row.custom-post-type a header h3{font-size:18px}
 }.news-articles .group>.col-2>.row.custom-post-type a .copy{font-size:14px;color:#819aa0}
 @media screen and (min-width:600px){.news-articles .group>.col-2>.row.custom-post-type a .copy{font-size:18px}
-}@media screen and (min-width:600px){.mobilecal{display:none}
-}.deskcal{display:none}
-@media screen and (min-width:600px){.deskcal{display:block}
 }.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
