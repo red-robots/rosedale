@@ -30,10 +30,7 @@
                 </div><!--.copy-->
             </section><!--.col-1-->
             <aside class="col-2">
-            <div class="widget">
-            <h2>Sign Up for Our Newsletter</h2>
-                <a class="button" href="https://visitor.r20.constantcontact.com/manage/optin/ea?v=001qpcI2uFx_R6axja6B7Vb3ED78WMHtERqkhj-5TRXAIzILE4rmi9oPBMVSEBtovPyOkLD3CL4M4Y7eqJZOrMt2g%3D%3D" target="_blank">Sign Up</a>
-            </div>
+                
                 <?php 
 
 
@@ -83,6 +80,10 @@
                     </div><!--.events-->
                     <?php wp_reset_postdata();
                 endif;?>
+                <div class="widget">
+                <h2>Sign Up for Our Newsletter</h2>
+                    <a class="button" href="https://visitor.r20.constantcontact.com/manage/optin/ea?v=001qpcI2uFx_R6axja6B7Vb3ED78WMHtERqkhj-5TRXAIzILE4rmi9oPBMVSEBtovPyOkLD3CL4M4Y7eqJZOrMt2g%3D%3D" target="_blank">Sign Up</a>
+                </div>
             </aside><!--.col-2-->
         </div><!--.row-3-->
         <?php get_template_part( 'template-parts/upcoming' );?>
