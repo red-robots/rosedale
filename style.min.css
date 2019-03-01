@@ -978,6 +978,11 @@ aside.upcoming .events .event a.button{margin:20px 0 0 0;width:100%;font-size:18
 .template-index>.row-4>.wrapper section header h2{padding:10px 20px;margin:0;font-size:18px;color:#819aa0;text-transform:uppercase;text-align:center}
 @media screen and (min-width:900px){.template-index>.row-4>.wrapper section header h2{font-size:25px}
 }.template-index>.row-4>.wrapper section .copy{color:#819aa0;font-size:16px}
+.aboutleft{width:100%;float:left;margin:0 0 50px 0}
+@media screen and (min-width:600px){.aboutleft{width:45%;margin:0}
+}.aboutright{width:100%;float:left}
+@media screen and (min-width:600px){.aboutright{width:50%;float:right}
+}.floatl{float:left;margin-bottom:-15%}
 section.home-about{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}
 section.home-about a.button.spacer{margin:30px auto}
 .template-event>.banner img{display:block;width:100%}
@@ -1146,7 +1151,7 @@ section.home-about a.button.spacer{margin:30px auto}
 .infinity-end.neverending .site-footer{display:block}
 .page-content .wp-smiley,.entry-content .wp-smiley,.comment-content .wp-smiley{border:0;margin-bottom:0;margin-top:0;padding:0}
 embed,iframe,object{max-width:100%}
-.embed-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;height:auto}
+.embed-container{position:relative;padding-bottom:56.25%;overflow:hidden;max-width:100%;height:auto}
 .embed-container iframe,.embed-container object,.embed-container embed{position:absolute;top:0;left:0;width:100%;height:100%}
 .wp-caption{margin-bottom:1.5em;max-width:100%}
 .wp-caption img[class*="wp-image-"]{display:block;margin-left:auto;margin-right:auto}

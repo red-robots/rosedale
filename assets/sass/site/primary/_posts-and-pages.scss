@@ -368,6 +368,28 @@
         }
     }
 }
+.aboutleft {
+    width: 100%;
+    float: left; 
+    margin: 0 0 50px 0; 
+    @media screen and (min-width: $tabwidth){
+        width: 45%;
+        margin: 0;
+    }
+}
+.aboutright {
+    width: 100%;
+    float: left;  
+    @media screen and (min-width: $tabwidth){
+        width: 50%;
+         float: right; 
+    }
+}
+.floatl {
+    float: left;
+    // overflow: hidden;
+    margin-bottom: -15%;
+}
 section.home-about {
     display: flex;
     justify-content: center;
@@ -376,6 +398,7 @@ section.home-about {
     a.button.spacer {
         margin: 30px auto;
     }
+
 }
 .template-event {
 

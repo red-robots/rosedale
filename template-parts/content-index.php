@@ -183,19 +183,27 @@
     $title = get_field("about_title");
     $description = get_field("about_description");
     if($title&&$description):?>
-        <div class="row-4">
+        <div class="row-4 floatl">
             <div class="wrapper cap">
-                <section class="home-about">
-                    <header>
-                        <h2><?php echo $title;?></h2>
-                    </header>
-                    <div class="copy">
-                        <?php echo $description;?>
-                    </div><!--.copy-->
-                    <a href="<?php bloginfo('url'); ?>/about/rosedale-today" class="button spacer">
-                        Learn More
-                    </a>
-                </section>
+                <div class="aboutleft">
+                    <section class="home-about">
+                        <header>
+                            <h2><?php echo $title;?></h2>
+                        </header>
+                        <div class="copy">
+                            <?php echo $description;?>
+                        </div><!--.copy-->
+                        <a href="<?php bloginfo('url'); ?>/about/rosedale-today" class="button spacer">
+                            Learn More
+                        </a>
+                    </section>
+                </div>
+                <div class="aboutright">
+                    <div class="embed-container">
+                        <?php the_field('video'); ?>
+                    </div>
+                </div>
+                
             </div><!--.wrapper-->
         </div><!--.row-4-->
     <?php endif;?>

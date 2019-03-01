@@ -23,6 +23,7 @@
 				$tumblr_link = get_field("tumblr_link","option");
 				$facebook_link = get_field("facebook_link","option");
 				$flickr_link = get_field("flickr_link","option");
+				$instagram_link = get_field("instagram_link","option");
 				if($contact_title):?>
 					<header>
 						<h2><?php echo $contact_title;?></h2>
@@ -56,6 +57,11 @@
 						<?php if($flickr_link):?>
 							<a target="_blank" href="<?php echo $flickr_link;?>">
 								<i class="fa fa-flickr"></i>
+							</a>
+						<?php endif;?>
+						<?php if($instagram_link):?>
+							<a target="_blank" href="<?php echo $instagram_link;?>">
+								<i class="fa fa-instagram"></i>
 							</a>
 						<?php endif;?>
 					</div><!--.social-->
