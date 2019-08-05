@@ -6,6 +6,13 @@
  *
  * @package ACStarter
  */
+
+
+// For cropping event and posts
+add_image_size('postthumb', 500, 300, array('center', 'center'));
+
+
+
 /* 
   Event Espresso - Change category order
 

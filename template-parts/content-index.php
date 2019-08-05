@@ -45,7 +45,7 @@
                         </header>
                     <?php endif;
                     if($events_image):?>
-                        <img src="<?php echo $events_image['sizes']['large'];?>" alt="<?php echo $events_image['alt'];?>">
+                        <img src="<?php echo $events_image['sizes']['postthumb'];?>" alt="<?php echo $events_image['alt'];?>">
                     <?php endif; ?>
                     <?php $args = array(
                         'post_type'=>'event',
@@ -95,7 +95,7 @@
                         </header>
                     <?php endif;
                     if($news_image):?>
-                        <img src="<?php echo $news_image['sizes']['large'];?>" alt="<?php echo $news_image['alt'];?>">
+                        <img src="<?php echo $news_image['sizes']['postthumb'];?>" alt="<?php echo $news_image['alt'];?>">
                     <?php endif; 
                     $args = array(
                         'post_type'=>'post',
