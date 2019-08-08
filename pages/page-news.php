@@ -64,7 +64,7 @@ get_header(); ?>
 				 		<section class="group <?php echo $class; ?> js-blocks">
 				 				<div class="image">
 				 					<?php if(has_post_thumbnail()) {
-				 						the_post_thumbnail();
+				 						the_post_thumbnail('postthumb');
 				 					} else { ?>
 				 					<img src="<?php bloginfo('template_url'); ?>/images/default.jpg">
 				 					<?php } ?>
