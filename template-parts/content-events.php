@@ -56,7 +56,7 @@
                         </header>
                         <?php if($image):?>
                             <a href="<?php the_permalink();?>">
-                                <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+                                <img src="<?php echo $image['sizes']['postthumb'];?>" alt="<?php echo $image['alt'];?>">
                             </a>
                         <?php endif;
                         if($date):

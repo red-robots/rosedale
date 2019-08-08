@@ -98,7 +98,7 @@ get_header(); ?>
 			                    $link = $box['link'];?>
 			                    <?php if($image&&$box&&$link):?>
 			                        <a href="<?php echo $link;?>" class="js-blocks <?php if($i%3==0) echo "first";?> <?php if(($i+1)%3==0) echo "last";?>">
-			                            <img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
+			                            <img src="<?php echo $image['sizes']['postthumb'];?>" alt="<?php echo $image['alt'];?>">
 			                            <h2><?php echo $title;?></h2>
 			                        </a>
 			                        <?php $i++;
