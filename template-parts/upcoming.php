@@ -79,7 +79,7 @@ if($query->have_posts()):?>
                         <h3><?php the_title();?></h3>
                     </header>
                     <?php if($image):?>
-                        <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+                        <img src="<?php echo $image['sizes']['postthumb'];?>" alt="<?php echo $image['alt'];?>">
                     <?php endif;
                     if($date):
                         $display_date = (new DateTime($date))->format('F j, Y');?>
