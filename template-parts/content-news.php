@@ -34,7 +34,7 @@
                 <?php 
 
 
-                if( get_post_type() != 'events' ) {
+                if( get_post_type() !== 'events' ) {
                     get_sidebar();
                 }
                 
