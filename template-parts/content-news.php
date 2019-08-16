@@ -34,8 +34,10 @@
                 <?php 
 
 
-
-                get_sidebar();
+                if( get_post_type() != 'events' ) {
+                    get_sidebar();
+                }
+                
 
                 $today = date('Ymd');
                 $args = array(
