@@ -30,7 +30,7 @@
                 </div><!--.copy-->
             </section><!--.col-1-->
             <aside class="col-2">
-                
+                <!-- edit -->
                 <?php 
 
 
