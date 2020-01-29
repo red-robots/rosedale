@@ -33,6 +33,7 @@ function js_custom_init()
     'has_archive' => false, 
     'hierarchical' => false, // 'false' acts like posts 'true' acts like pages
     'menu_position' => 20,
+    'menu_icon'=> 'dashicons-calendar-alt',
     'supports' => array('title','editor','custom-fields','thumbnail'),
 	
   ); 

@@ -20,9 +20,30 @@
         <header class="row-1">
             <h1><?php the_title();?></h1>
         </header>
-        <?php $date = get_field("date");
-        if($date):
-            $display_date = (new DateTime($date))->format('F j, Y');?>
+        <?php 
+        $startdate = get_field("date");
+        $enddate = get_field("enddate");
+        $sdate = ($startdate) ? (new DateTime($startdate))->format('F j, Y') : '';
+        $edate = ($enddate) ? (new DateTime($enddate))->format('F j, Y') : '';
+        $theDates = array($sdate,$edate);
+        $display_date = '';
+        if( $theDates && array_filter($theDates)  ) {
+            $display_date = implode( " &ndash; ", array_filter($theDates) );
+            $month_startdate = date("m",strtotime($sdate));
+            $year_startdate = date("Y",strtotime($sdate));
+
+            $month_enddate = date("m",strtotime($enddate));
+            $year_enddate = date("Y",strtotime($enddate));
+            if( ($month_startdate==$month_enddate) &&  ($year_startdate==$year_enddate) ) {
+                $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("d",strtotime($enddate)) . ', ' . $year_enddate;
+            } 
+            else if( ($month_startdate!=$month_enddate) &&  ($year_startdate==$year_enddate) ) {
+                $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("M",strtotime($enddate)) . ' ' . date("d",strtotime($enddate)) . ', ' . $year_enddate;
+            }
+        }
+
+        if($display_date):
+            //$display_date = (new DateTime($date))->format('F j, Y'); ?>
             <div class="date row-2">
                 <?php echo $display_date;?>
             </div><!--.date-->

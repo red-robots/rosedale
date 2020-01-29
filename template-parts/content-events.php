@@ -45,7 +45,27 @@
             <div class="events clear-bottom row-3">
                 <?php while($query->have_posts()):$query->the_post();?>
                     <?php $image = get_field("event_image");
-                    $date = get_field("date");
+                    $startdate = get_field("date");
+                    $enddate = get_field("enddate");
+                    $sdate = ($startdate) ? (new DateTime($startdate))->format('F j, Y') : '';
+                    $edate = ($enddate) ? (new DateTime($enddate))->format('F j, Y') : '';
+                    $theDates = array($sdate,$edate);
+                    $display_date = '';
+                    if( $theDates && array_filter($theDates)  ) {
+                        $display_date = implode(" &ndash; ",array_filter($theDates));
+                        $month_startdate = date("m",strtotime($sdate));
+                        $year_startdate = date("Y",strtotime($sdate));
+
+                        $month_enddate = date("m",strtotime($enddate));
+                        $year_enddate = date("Y",strtotime($enddate));
+                        if( ($month_startdate==$month_enddate) &&  ($year_startdate==$year_enddate) ) {
+                            $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("d",strtotime($enddate)) . ', ' . $year_enddate;
+                        } 
+                        else if( ($month_startdate!=$month_enddate) &&  ($year_startdate==$year_enddate) ) {
+                            $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("M",strtotime($enddate)) . ' ' . date("d",strtotime($enddate)) . ', ' . $year_enddate;
+                        }
+                        
+                    }
                     $view_text = get_field("view_events_text","option");
                     $description = get_field("brief_description");?>
                     <section class="event js-blocks-nouse">
@@ -59,8 +79,7 @@
                                 <img src="<?php echo $image['sizes']['postthumb'];?>" alt="<?php echo $image['alt'];?>">
                             </a>
                         <?php endif;
-                        if($date):
-                            $display_date = (new DateTime($date))->format('F j, Y');?>
+                        if($display_date): ?>
                             <div class="date">
                                 <?php echo $display_date;?>
                             </div><!--.date-->
