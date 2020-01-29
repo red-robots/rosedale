@@ -53,17 +53,25 @@
                     $display_date = '';
                     if( $theDates && array_filter($theDates)  ) {
                         $display_date = implode(" &ndash; ",array_filter($theDates));
+                        $day_startdate = date("d",strtotime($sdate));
                         $month_startdate = date("m",strtotime($sdate));
                         $year_startdate = date("Y",strtotime($sdate));
 
-                        $month_enddate = date("m",strtotime($enddate));
-                        $year_enddate = date("Y",strtotime($enddate));
-                        if( ($month_startdate==$month_enddate) &&  ($year_startdate==$year_enddate) ) {
-                            $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("d",strtotime($enddate)) . ', ' . $year_enddate;
+                        $day_enddate = date("d",strtotime($edate));
+                        $month_enddate = date("m",strtotime($edate));
+                        $year_enddate = date("Y",strtotime($edate));
+                        if( ( ($month_startdate==$month_enddate) &&  ($year_startdate==$year_enddate) ) &&  $day_startdate!=$day_enddate ) {
+                            $display_date = date("F",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
+                        }
+                        else if( ($month_startdate==$month_enddate) &&  ($day_startdate==$day_enddate) && ($year_startdate==$year_enddate) ) {
+                            $display_date = date("F",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ', ' . $year_startdate;
                         } 
                         else if( ($month_startdate!=$month_enddate) &&  ($year_startdate==$year_enddate) ) {
-                            $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("M",strtotime($enddate)) . ' ' . date("d",strtotime($enddate)) . ', ' . $year_enddate;
+                            $display_date = date("F",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("F",strtotime($edate)) . ' ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
                         }
+                        // else if( ( ($month_startdate==$month_enddate) &&  ($day_startdate==$day_enddate) ) && $year_startdate!=$year_enddate ) {
+                        //     $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ', ' . date("Y",strtotime($sdate)) . ' &ndash; ' . date("M",strtotime($edate)) . ' ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
+                        // }
                         
                     }
                     $view_text = get_field("view_events_text","option");

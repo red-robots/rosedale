@@ -25,25 +25,38 @@
         $enddate = get_field("enddate");
         $sdate = ($startdate) ? (new DateTime($startdate))->format('F j, Y') : '';
         $edate = ($enddate) ? (new DateTime($enddate))->format('F j, Y') : '';
+
+        $sdate2 = ($startdate) ? (new DateTime($startdate))->format('M j, Y') : '';
+        $edate2 = ($enddate) ? (new DateTime($enddate))->format('M j, Y') : '';
+
         $theDates = array($sdate,$edate);
         $display_date = '';
         if( $theDates && array_filter($theDates)  ) {
-            $display_date = implode( " &ndash; ", array_filter($theDates) );
+            $arrs = array_filter($theDates);
+            $countDates = count($arrs);
+            $display_date = implode( " &ndash; ", $arrs );
+            if($countDates==2) {
+                $display_date = implode( " &ndash; ", array_filter( array($sdate2,$edate2) ) );
+            }
+            
             $month_startdate = date("m",strtotime($sdate));
             $year_startdate = date("Y",strtotime($sdate));
 
+
             $month_enddate = date("m",strtotime($enddate));
             $year_enddate = date("Y",strtotime($enddate));
-            if( ($month_startdate==$month_enddate) &&  ($year_startdate==$year_enddate) ) {
-                $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("d",strtotime($enddate)) . ', ' . $year_enddate;
+            if( ( ($month_startdate==$month_enddate) &&  ($year_startdate==$year_enddate) ) &&  $day_startdate!=$day_enddate ) {
+                $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
+            }
+            else if( ($month_startdate==$month_enddate) &&  ($day_startdate==$day_enddate) && ($year_startdate==$year_enddate) ) {
+                $display_date = date("F",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ', ' . $year_startdate;
             } 
             else if( ($month_startdate!=$month_enddate) &&  ($year_startdate==$year_enddate) ) {
-                $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("M",strtotime($enddate)) . ' ' . date("d",strtotime($enddate)) . ', ' . $year_enddate;
+                $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("M",strtotime($edate)) . ' ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
             }
         }
 
-        if($display_date):
-            //$display_date = (new DateTime($date))->format('F j, Y'); ?>
+        if($display_date): ?>
             <div class="date row-2">
                 <?php echo $display_date;?>
             </div><!--.date-->
