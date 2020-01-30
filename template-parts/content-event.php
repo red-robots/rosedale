@@ -31,30 +31,30 @@
 
         $theDates = array($sdate,$edate);
         $display_date = '';
+
         if( $theDates && array_filter($theDates)  ) {
-            $arrs = array_filter($theDates);
-            $countDates = count($arrs);
-            $display_date = implode( " &ndash; ", $arrs );
-            if($countDates==2) {
-                $display_date = implode( " &ndash; ", array_filter( array($sdate2,$edate2) ) );
-            }
-            
+            $display_date = implode(" &ndash; ",array_filter($theDates));
+            $day_startdate = date("d",strtotime($sdate));
             $month_startdate = date("m",strtotime($sdate));
             $year_startdate = date("Y",strtotime($sdate));
 
-
-            $month_enddate = date("m",strtotime($enddate));
-            $year_enddate = date("Y",strtotime($enddate));
+            $day_enddate = date("d",strtotime($edate));
+            $month_enddate = date("m",strtotime($edate));
+            $year_enddate = date("Y",strtotime($edate));
             if( ( ($month_startdate==$month_enddate) &&  ($year_startdate==$year_enddate) ) &&  $day_startdate!=$day_enddate ) {
-                $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
+                $display_date = date("F",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
             }
             else if( ($month_startdate==$month_enddate) &&  ($day_startdate==$day_enddate) && ($year_startdate==$year_enddate) ) {
                 $display_date = date("F",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ', ' . $year_startdate;
             } 
             else if( ($month_startdate!=$month_enddate) &&  ($year_startdate==$year_enddate) ) {
-                $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("M",strtotime($edate)) . ' ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
+                $display_date = date("F",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("F",strtotime($edate)) . ' ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
             }
+            // else if( ( ($month_startdate==$month_enddate) &&  ($day_startdate==$day_enddate) ) && $year_startdate!=$year_enddate ) {
+            //     $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ', ' . date("Y",strtotime($sdate)) . ' &ndash; ' . date("M",strtotime($edate)) . ' ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
+            // }
         }
+
 
         if($display_date): ?>
             <div class="date row-2">
@@ -120,11 +120,44 @@
                     <?php endif;?>
                     <div class="events">
                         <?php while($query->have_posts()): $query->the_post();?>
-                            <?php $date = get_field("date");?>
+                            <?php
+                                $startdate = get_field("date");
+                                $enddate = get_field("enddate");
+                                $sdate = ($startdate) ? (new DateTime($startdate))->format('F j, Y') : '';
+                                $edate = ($enddate) ? (new DateTime($enddate))->format('F j, Y') : '';
+
+                                $sdate2 = ($startdate) ? (new DateTime($startdate))->format('M j, Y') : '';
+                                $edate2 = ($enddate) ? (new DateTime($enddate))->format('M j, Y') : '';
+
+                                $theDates = array($sdate,$edate);
+                                $display_date = '';
+
+                                if( $theDates && array_filter($theDates)  ) {
+                                    $display_date = implode(" &ndash; ",array_filter($theDates));
+                                    $day_startdate = date("d",strtotime($sdate));
+                                    $month_startdate = date("m",strtotime($sdate));
+                                    $year_startdate = date("Y",strtotime($sdate));
+
+                                    $day_enddate = date("d",strtotime($edate));
+                                    $month_enddate = date("m",strtotime($edate));
+                                    $year_enddate = date("Y",strtotime($edate));
+                                    if( ( ($month_startdate==$month_enddate) &&  ($year_startdate==$year_enddate) ) &&  $day_startdate!=$day_enddate ) {
+                                        $display_date = date("F",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
+                                    }
+                                    else if( ($month_startdate==$month_enddate) &&  ($day_startdate==$day_enddate) && ($year_startdate==$year_enddate) ) {
+                                        $display_date = date("F",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ', ' . $year_startdate;
+                                    } 
+                                    else if( ($month_startdate!=$month_enddate) &&  ($year_startdate==$year_enddate) ) {
+                                        $display_date = date("F",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ' &ndash; ' . date("F",strtotime($edate)) . ' ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
+                                    }
+                                    // else if( ( ($month_startdate==$month_enddate) &&  ($day_startdate==$day_enddate) ) && $year_startdate!=$year_enddate ) {
+                                    //     $display_date = date("M",strtotime($sdate)) . ' ' . date("d",strtotime($sdate)) . ', ' . date("Y",strtotime($sdate)) . ' &ndash; ' . date("M",strtotime($edate)) . ' ' . date("d",strtotime($edate)) . ', ' . $year_enddate;
+                                    // }
+                                }
+                            ?>
                             <div class="event">
                                 <a href="<?php the_permalink();?>">
-                                    <?php if($date):
-                                        $display_date = (new DateTime($date))->format('F j, Y');?>
+                                    <?php if($display_date): ?>
                                         <div class="date">
                                             <?php echo $display_date;?>
                                         </div><!--.date-->

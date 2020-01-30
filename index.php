@@ -21,11 +21,14 @@ get_header(); ?>
 			/* Start the Loop */
 			$post = get_post(84);
 			if ( $post ) : 
+
 				setup_postdata($post);
 
 				get_template_part( 'template-parts/content', 'index' );
 
 			endif; ?>
+
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

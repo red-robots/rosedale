@@ -1144,7 +1144,8 @@ section.home-about a.button.spacer{margin:30px auto}
 @media screen and (min-width:600px){.news-articles .group>.col-2>.row.custom-post-type a header h3{font-size:18px}
 }.news-articles .group>.col-2>.row.custom-post-type a .copy{font-size:14px;color:#819aa0}
 @media screen and (min-width:600px){.news-articles .group>.col-2>.row.custom-post-type a .copy{font-size:18px}
-}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+}.fullwidthWrap{width:100%;float:left}
+.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}
