@@ -1,4 +1,9 @@
-<?php if( is_page(179) ) : // things to do at Rosedale ?>
+<?php 
+
+
+
+
+if( is_page(179) ) : // things to do at Rosedale ?>
 <aside class="upcoming">
     <header>
         <h2>View Our Tours</h2>
@@ -38,10 +43,10 @@
     </header>
     <div class="tours-butn-wrap">
         <a class="button" href="<?php bloginfo('url');?>/plan-an-event/rental-rates/#gardensgroundsrates">
-            Gardens &amp; Grounds Rates
+            Packages and Rates
         </a><!--.link-->
-        <a class="button" href="<?php bloginfo('url');?>/plan-an-event/rental-rates/#photofilmshootrates">
-            Photo &amp; Film Shoot Rates
+        <a class="button" href="<?php bloginfo('url');?>/plan-an-event/other-private-events">
+            Photography at Rosedale
         </a><!--.link-->
     </div>
 </aside>
