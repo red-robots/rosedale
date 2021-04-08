@@ -668,4 +668,9 @@ aside.upcoming {
         display: block;
     }
 }
-
+.tkt-slctr-tbl th, .tkt-slctr-tbl td {
+	padding: 20px 0;
+}
+.template-index>.row-2>.wrapper>.row-2>.col-2 .news .post header h4 {
+	color: $color__rose-dark-green;
+}
