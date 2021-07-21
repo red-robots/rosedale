@@ -678,6 +678,8 @@ aside.upcoming {
 	background-color: #fff;
 	padding: 30px 0;
 	width: 100%;
+	position: relative;
+	z-index: 100000;
 }
 .footer-logos {
 	max-width: 1300px;

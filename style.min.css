@@ -397,7 +397,7 @@ aside.upcoming .events .event a.button{margin:20px 0 0 0;width:100%;font-size:18
 .deskcal{display:none}
 .tkt-slctr-tbl th,.tkt-slctr-tbl td{padding:20px 0}
 .template-index>.row-2>.wrapper>.row-2>.col-2 .news .post header h4{color:#819aa0}
-.flogos{background-color:#fff;padding:30px 0;width:100%}
+.flogos{background-color:#fff;padding:30px 0;width:100%;position:relative;z-index:100000}
 .footer-logos{max-width:1300px;text-align:center;margin:0 auto}
 .footer-logos>div{margin:20px auto}
 .footer-logos>div a{display:block}
