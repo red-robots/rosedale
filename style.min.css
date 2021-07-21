@@ -397,6 +397,9 @@ aside.upcoming .events .event a.button{margin:20px 0 0 0;width:100%;font-size:18
 .deskcal{display:none}
 .tkt-slctr-tbl th,.tkt-slctr-tbl td{padding:20px 0}
 .template-index>.row-2>.wrapper>.row-2>.col-2 .news .post header h4{color:#819aa0}
+.flogos{background-color:#fff;padding:30px 0;width:100%}
+.footer-logos{max-width:1300px;text-align:center;margin:0 auto}
+.footer-logos>*{margin:20px auto}
 .template-index{padding:0 0 20px 0}
 .template-index>.flexslider.row-1 ul.slides li img{width:100%;display:block}
 .template-index>.row-2>.wrapper{padding:20px 0 40px 0}
@@ -584,6 +587,7 @@ aside.upcoming .events .event:last-child{float:right}
 .nav-bar>.wrapper ul li:before{content:"|";margin:0 20px}
 .mobilecal{display:none}
 .deskcal{display:block}
+.footer-logos{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .template-index{padding:0 0 100px 0}
 .template-index>.row-2>.wrapper header.row-1 h2{font-size:50px;padding:0 0 20px 0}
 .template-index>.row-2>.wrapper>.row-2{margin:60px 0 0 0}

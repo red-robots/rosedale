@@ -14,6 +14,28 @@
 	</div><!-- #content -->
 	<div class="clear-bottom"></div>
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="flogos">
+			<div class="footer-logos">
+				<?php $partners_logo = get_field("partners_logo","option");
+				if($partners_logo):?>
+					<?php foreach($partners_logo as $row):
+						$logo = $row['partner_logo'];
+						$link = $row['partner_website'];
+						if($logo):?>
+							<div>
+							<?php if($link):?>
+								<a href="<?php echo $link;?>">
+							<?php endif;?>
+									<img src="<?php echo $logo['sizes']['medium'];?>" alt="<?php echo $logo['alt'];?>">
+							<?php if($link):?>
+								</a>
+							<?php endif;?>
+							</div>
+						<?php endif;
+					endforeach;?>
+				<?php endif;?>
+			</div>
+		</div>
 		<div class="wrapper cap">
 			<div class="col-1 col">
 				<?php $contact_title = get_field("contact_title","option");
@@ -88,22 +110,11 @@
 				<?php endif;?>
 			</div><!--.row-3-->
 			<div class="col-4 col clear-bottom">
-				<?php $partners_logo = get_field("partners_logo","option");
-				if($partners_logo):?>
-					<?php foreach($partners_logo as $row):
-						$logo = $row['partner_logo'];
-						$link = $row['partner_website'];
-						if($logo):?>
-							<?php if($link):?>
-								<a href="<?php echo $link;?>">
-							<?php endif;?>
-									<img src="<?php echo $logo['sizes']['medium'];?>" alt="<?php echo $logo['alt'];?>">
-							<?php if($link):?>
-								</a>
-							<?php endif;?>
-						<?php endif;
-					endforeach;?>
-				<?php endif;?>
+				
+
+
+
+
 			</div><!--.row-4-->
 		</div><!--.wrapper-->
 	</footer><!-- #colophon -->
