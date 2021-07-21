@@ -689,7 +689,10 @@ aside.upcoming {
 		justify-content: space-around;
 		align-items: center;
 	}
-	&>* {
+	&>div {
 		margin: 20px auto;
+		a {
+			display: block;
+		}
 	}
 }
