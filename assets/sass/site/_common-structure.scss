@@ -351,6 +351,9 @@ input.ticket-selector-submit-btn {
 
 #colophon {
 	background-color: $color__rose-medium-green;
+	width: 100%;
+	position: relative;
+	z-index: 100000;
 	>.wrapper {
 		padding: 30px 0;
 		@media screen and (min-width: $midwidth){
@@ -452,6 +455,10 @@ input.ticket-selector-submit-btn {
 			@media screen and (min-width: $midwidth){
 				width: 28%
 			}
+			.acs {
+				width: 120px;
+				float: right;
+			}
 		}
 		>.col-4 {
 			padding: 0 0 0 20px;
@@ -483,6 +490,14 @@ input.ticket-selector-submit-btn {
 				&:nth-child(even){
 					padding: 0 0 5px 5px;
 				}
+			}
+			.other-logos {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 			}
 		}
 	}

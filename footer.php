@@ -8,7 +8,9 @@
  *
  * @package ACStarter
  */
-
+$asc_logo = get_field('asc_logo', 'option');
+$asc_logo_link = get_field('asc_logo_link', 'option');
+$partners_logo = get_field("partners_logo","option");
 ?>
 
 	</div><!-- #content -->
@@ -16,28 +18,11 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="flogos">
 			<div class="footer-logos">
-				<?php $partners_logo = get_field("partners_logo","option");
-				if($partners_logo):?>
-					<?php foreach($partners_logo as $row):
-						$logo = $row['partner_logo'];
-						$link = $row['partner_website'];
-						if($logo):?>
-							<div>
-							<?php if($link):?>
-								<a href="<?php echo $link;?>">
-							<?php endif;?>
-									<img src="<?php echo $logo['sizes']['medium'];?>" alt="<?php echo $logo['alt'];?>">
-							<?php if($link):?>
-								</a>
-							<?php endif;?>
-							</div>
-						<?php endif;
-					endforeach;?>
-				<?php endif;?>
+				
 			</div>
 		</div>
 		<div class="wrapper cap">
-			<div class="col-1 col">
+			<div class="col-1 col js-blocks">
 				<?php $contact_title = get_field("contact_title","option");
 				$address_line_1 = get_field("address_line_1","option");
 				$address_line_2 = get_field("address_line_2","option");
@@ -89,13 +74,13 @@
 					</div><!--.social-->
 				<?php endif;?>
 			</div><!--.row-1-->
-			<div class="col-2 col">
+			<div class="col-2 col js-blocks">
 				<?php $map = get_field("map","option");
 				if($map):?>
 					<?php echo $map;?>
 				<?php endif;?>
 			</div><!--.row-2-->
-			<div class="col-3 col">
+			<div class="col-3 col js-blocks">
 				<?php $hours_title = get_field("hours_title","option");
 				$hours_copy = get_field("hours_copy","option");
 				if($hours_title):?>
@@ -108,11 +93,43 @@
 						<?php echo $hours_copy;?>
 					</div><!--.hours copy-->
 				<?php endif;?>
+
+				<?php if( $asc_logo ) { ?>
+					<div class="acs">
+						<?php if( $asc_logo_link ) { ?>
+							<a href="<?php echo $asc_logo_link; ?>">
+						<?php } ?>
+							<img src="<?php echo $asc_logo['sizes']['medium'];?>" alt="<?php echo $asc_logo['alt'];?>">
+						<?php if( $asc_logo_link ) { echo '</a>'; } ?>
+					</div>
+				<?php } ?>
+
+
 			</div><!--.row-3-->
-			<div class="col-4 col clear-bottom">
+			<div class="col-4 col clear-bottom js-blocks">
+				
 				
 
-
+				<div class="other-logos">
+					<?php 
+				if($partners_logo):?>
+					<?php foreach($partners_logo as $row):
+						$logo = $row['partner_logo'];
+						$link = $row['partner_website'];
+						if($logo):?>
+							<div>
+							<?php if($link):?>
+								<a href="<?php echo $link;?>">
+							<?php endif;?>
+									<img src="<?php echo $logo['sizes']['medium'];?>" alt="<?php echo $logo['alt'];?>">
+							<?php if($link):?>
+								</a>
+							<?php endif;?>
+							</div>
+						<?php endif;
+					endforeach;?>
+				<?php endif;?>
+				</div>
 
 
 			</div><!--.row-4-->
