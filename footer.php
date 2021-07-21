@@ -16,11 +16,11 @@ $partners_logo = get_field("partners_logo","option");
 	</div><!-- #content -->
 	<div class="clear-bottom"></div>
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="flogos">
+		<!-- <div class="flogos">
 			<div class="footer-logos">
 				
 			</div>
-		</div>
+		</div> -->
 		<div class="wrapper cap">
 			<div class="col-1 col js-blocks">
 				<?php $contact_title = get_field("contact_title","option");
