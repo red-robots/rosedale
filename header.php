@@ -42,9 +42,16 @@ g.async=1;g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s
 				$address_line_2 = get_field("address_line_2","option");
 				$support_text = get_field("support_text","option");
 				$support_link = get_field("support_link","option");
+				$ex_text = get_field("extra_button_text","option");
+				$ex_link = get_field("extra_button_link","option");
 				if($support_link && $support_text):?>
 					<a class="button" href="<?php echo $support_link;?>">
 						<?php echo $support_text;?>
+					</a>
+				<?php endif;
+				if($ex_text && $ex_link):?>
+					<a class="button" href="<?php echo $ex_link;?>">
+						<?php echo $ex_text;?>
 					</a>
 				<?php endif;
 				if($address_line_1 && $address_line_2):?>
