@@ -33,12 +33,12 @@
             'orderby'=>'meta_value_num',
             'meta_key'=>'date',
             'order'=>'ASC',
-            'meta_query'=>array(
-                'key'=>'date',
-                'value'=>$today,
-                'compare'=>'>=',
-                'type'=>'NUMERIC'
-            )
+            // 'meta_query'=>array(
+            //     'key'=>'date',
+            //     'value'=>$today,
+            //     'compare'=>'>=',
+            //     'type'=>'NUMERIC'
+            // )
         );
         $query = new WP_Query($args);
         if($query->have_posts()):?>
