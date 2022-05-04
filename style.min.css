@@ -450,7 +450,7 @@ aside.upcoming .events .event a.button{margin:20px 0 0 0;width:100%;font-size:18
 .template-index>.row-4>.wrapper section header{background-color:#e9f5f1;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);position:absolute;top:0;left:50%;display:inline-block;min-width:30%}
 .template-index>.row-4>.wrapper section header h2{padding:10px 20px;margin:0;font-size:18px;color:#819aa0;text-transform:uppercase;text-align:center}
 .template-index>.row-4>.wrapper section .copy{color:#819aa0;font-size:16px}
-.aboutleft{width:100%;float:left;margin:0 0 50px 0}
+.aboutleft{width:100%;margin:0 0 50px 0}
 .aboutright{width:100%;float:left}
 .floatl{float:left;margin-bottom:-15%}
 section.home-about{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
